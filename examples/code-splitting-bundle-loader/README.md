@@ -291,41 +291,43 @@ module.exports = "It works";
 ## Unoptimized
 
 ```
-Hash: 0a1b2c3d4e5f6a7b8c9d
-Version: webpack 4.39.0
-      Asset       Size  Chunks             Chunk Names
-1.output.js  257 bytes       1  [emitted]  
-  output.js      9 KiB       0  [emitted]  main
-Entrypoint main = output.js
-chunk    {0} output.js (main) 375 bytes >{1}< [entry] [rendered]
+Hash: [1mb00272d749df332e9407[39m[22m
+Version: webpack [1m4.39.2[39m[22m
+Time: [1m444[39m[22mms
+      [1mAsset[39m[22m       [1mSize[39m[22m  [1mChunks[39m[22m  [1m[39m[22m           [1m[39m[22m[1mChunk Names[39m[22m
+[1m[32m1.output.js[39m[22m  257 bytes       [1m1[39m[22m  [1m[32m[emitted][39m[22m  
+  [1m[32moutput.js[39m[22m   9.01 KiB       [1m0[39m[22m  [1m[32m[emitted][39m[22m  main
+Entrypoint [1mmain[39m[22m = [1m[32moutput.js[39m[22m
+chunk    {[1m[33m0[39m[22m} [1m[32moutput.js[39m[22m (main) 378 bytes >{[1m[33m1[39m[22m}<[1m[33m [entry][39m[22m[1m[32m [rendered][39m[22m
     > ./example.js main
- [0] ./example.js 94 bytes {0} [built]
-     single entry ./example.js  main
- [1] (webpack)/node_modules/bundle-loader!./file.js 281 bytes {0} [built]
-     cjs require bundle-loader!./file.js [0] ./example.js 1:0-34
-chunk    {1} 1.output.js 28 bytes <{0}> [rendered]
-    > [1] (webpack)/node_modules/bundle-loader!./file.js 7:0-14:2
- [2] ./file.js 28 bytes {1} [built]
-     cjs require !!./file.js [1] (webpack)/node_modules/bundle-loader!./file.js 8:8-30
+ [0] [1m./example.js[39m[22m 97 bytes {[1m[33m0[39m[22m}[1m[32m [built][39m[22m
+     single entry [1m[36m./example.js[39m[22m  main
+ [1] [1m(webpack)/node_modules/bundle-loader!./file.js[39m[22m 281 bytes {[1m[33m0[39m[22m}[1m[32m [built][39m[22m
+     cjs require [1m[36mbundle-loader!./file.js[39m[22m [0] [1m[35m./example.js[39m[22m 1:0-34
+chunk    {[1m[33m1[39m[22m} [1m[32m1.output.js[39m[22m 28 bytes <{[1m[33m0[39m[22m}>[1m[32m [rendered][39m[22m
+    > [1] [1m(webpack)/node_modules/bundle-loader!./file.js[39m[22m 7:0-14:2
+ [2] [1m./file.js[39m[22m 28 bytes {[1m[33m1[39m[22m}[1m[32m [built][39m[22m
+     cjs require [1m[36m!!./file.js[39m[22m [1] [1m[35m(webpack)/node_modules/bundle-loader!./file.js[39m[22m 8:8-30
 ```
 
 ## Production mode
 
 ```
-Hash: 0a1b2c3d4e5f6a7b8c9d
-Version: webpack 4.39.0
-      Asset      Size  Chunks             Chunk Names
-1.output.js  98 bytes       1  [emitted]  
-  output.js  2.24 KiB       0  [emitted]  main
-Entrypoint main = output.js
-chunk    {0} output.js (main) 375 bytes >{1}< [entry] [rendered]
+Hash: [1m00ac58bdb1552312fa42[39m[22m
+Version: webpack [1m4.39.2[39m[22m
+Time: [1m1020[39m[22mms
+      [1mAsset[39m[22m      [1mSize[39m[22m  [1mChunks[39m[22m  [1m[39m[22m           [1m[39m[22m[1mChunk Names[39m[22m
+[1m[32m1.output.js[39m[22m  98 bytes       [1m1[39m[22m  [1m[32m[emitted][39m[22m  
+  [1m[32moutput.js[39m[22m  2.24 KiB       [1m0[39m[22m  [1m[32m[emitted][39m[22m  main
+Entrypoint [1mmain[39m[22m = [1m[32moutput.js[39m[22m
+chunk    {[1m[33m0[39m[22m} [1m[32moutput.js[39m[22m (main) 378 bytes >{[1m[33m1[39m[22m}<[1m[33m [entry][39m[22m[1m[32m [rendered][39m[22m
     > ./example.js main
- [0] ./example.js 94 bytes {0} [built]
-     single entry ./example.js  main
- [1] (webpack)/node_modules/bundle-loader!./file.js 281 bytes {0} [built]
-     cjs require bundle-loader!./file.js [0] ./example.js 1:0-34
-chunk    {1} 1.output.js 28 bytes <{0}> [rendered]
-    > [1] (webpack)/node_modules/bundle-loader!./file.js 7:0-14:2
- [2] ./file.js 28 bytes {1} [built]
-     cjs require !!./file.js [1] (webpack)/node_modules/bundle-loader!./file.js 8:8-30
+ [0] [1m./example.js[39m[22m 97 bytes {[1m[33m0[39m[22m}[1m[32m [built][39m[22m
+     single entry [1m[36m./example.js[39m[22m  main
+ [1] [1m(webpack)/node_modules/bundle-loader!./file.js[39m[22m 281 bytes {[1m[33m0[39m[22m}[1m[32m [built][39m[22m
+     cjs require [1m[36mbundle-loader!./file.js[39m[22m [0] [1m[35m./example.js[39m[22m 1:0-34
+chunk    {[1m[33m1[39m[22m} [1m[32m1.output.js[39m[22m 28 bytes <{[1m[33m0[39m[22m}>[1m[32m [rendered][39m[22m
+    > [1] [1m(webpack)/node_modules/bundle-loader!./file.js[39m[22m 7:0-14:2
+ [2] [1m./file.js[39m[22m 28 bytes {[1m[33m1[39m[22m}[1m[32m [built][39m[22m
+     cjs require [1m[36m!!./file.js[39m[22m [1] [1m[35m(webpack)/node_modules/bundle-loader!./file.js[39m[22m 8:8-30
 ```

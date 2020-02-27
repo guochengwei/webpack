@@ -11,20 +11,23 @@ A manifest is created which includes mappings from module names to internal ids.
 ```javascript
 var path = require("path");
 var webpack = require("../../../");
-
 module.exports = {
 	// mode: "development || "production",
 	context: __dirname,
-	entry: ["example-vendor"],
+	entry: {
+		vendor: ["example-vendor", "example-vendor2"],
+		// vendor: ["example-vendor2"]
+	},
 	output: {
-		filename: "vendor.js", // best use [hash] here too
-		path: path.resolve(__dirname, "dist"),
-		library: "vendor_lib_[hash]"
+		filename: "[name].js", // best use [hash] here too
+		path: path.resolve(__dirname, "dist")
 	},
 	plugins: [
+		// new webpack.HashedModuleIdsPlugin(),
 		new webpack.DllPlugin({
-			name: "vendor_lib_[hash]",
-			path: path.resolve(__dirname, "dist/vendor-manifest.json")
+			name: "[name]_[hash]",
+			path: path.resolve(__dirname, "./dist/[name]-manifest.json"),
+			asyncChunks: ["vendor"]
 		})
 	]
 };
@@ -41,120 +44,13 @@ export function square(n) {
 # dist/vendor.js
 
 ```javascript
-var vendor_lib_a132d30959ef28c3f004 =
-```
-<details><summary><code>/******/ (function(modules) { /* webpackBootstrap */ })</code></summary>
-
-``` js
-/******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-/******/
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId]) {
-/******/ 			return installedModules[moduleId].exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
-/******/ 		};
-/******/
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/
-/******/ 		// Flag the module as loaded
-/******/ 		module.l = true;
-/******/
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/
-/******/
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-/******/
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-/******/
-/******/ 	// define getter function for harmony exports
-/******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
-/******/ 		}
-/******/ 	};
-/******/
-/******/ 	// define __esModule on exports
-/******/ 	__webpack_require__.r = function(exports) {
-/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 		}
-/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 	};
-/******/
-/******/ 	// create a fake namespace object
-/******/ 	// mode & 1: value is a module id, require it
-/******/ 	// mode & 2: merge all properties of value into the ns
-/******/ 	// mode & 4: return value when already ns object
-/******/ 	// mode & 8|1: behave like require
-/******/ 	__webpack_require__.t = function(value, mode) {
-/******/ 		if(mode & 1) value = __webpack_require__(value);
-/******/ 		if(mode & 8) return value;
-/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
-/******/ 		var ns = Object.create(null);
-/******/ 		__webpack_require__.r(ns);
-/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
-/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
-/******/ 		return ns;
-/******/ 	};
-/******/
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__webpack_require__.n = function(module) {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			function getDefault() { return module['default']; } :
-/******/ 			function getModuleExports() { return module; };
-/******/ 		__webpack_require__.d(getter, 'a', getter);
-/******/ 		return getter;
-/******/ 	};
-/******/
-/******/ 	// Object.prototype.hasOwnProperty.call
-/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-/******/
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "dist/";
-/******/
-/******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
-/******/ })
-/************************************************************************/
-```
-
-</details>
-
-``` js
-/******/ ([
-/* 0 */
-/*!****************!*\
-  !*** dll main ***!
-  \****************/
-/*! no static exports found */
-/*! all exports used */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__;
-
-/***/ }),
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["vendor_350b0c06610fb1884d69"],[
+/* 0 */,
 /* 1 */
 /*!*****************************************!*\
   !*** ../node_modules/example-vendor.js ***!
   \*****************************************/
 /*! exports provided: square */
-/*! all exports used */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -165,14 +61,30 @@ function square(n) {
 }
 
 
+/***/ }),
+/* 2 */
+/*!******************************************!*\
+  !*** ../node_modules/example-vendor2.js ***!
+  \******************************************/
+/*! exports provided: square2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "square2", function() { return square2; });
+function square2 (n) {
+	return n * n;
+}
+
+
 /***/ })
-/******/ ]);
+]]);
 ```
 
 # dist/vendor-manifest.json
 
 ```javascript
-{"name":"vendor_lib_a132d30959ef28c3f004","content":{"../node_modules/example-vendor.js":{"id":1,"buildMeta":{"exportsType":"namespace","providedExports":["square"]}}}}
+{"name":"vendor_350b0c06610fb1884d69","asyncChunk":true,"content":{"../node_modules/example-vendor.js":{"id":1,"buildMeta":{"exportsType":"namespace","providedExports":["square"]}},"../node_modules/example-vendor2.js":{"id":2,"buildMeta":{"exportsType":"namespace","providedExports":["square2"]}}}}
 ```
 
 # Info
@@ -180,31 +92,29 @@ function square(n) {
 ## Unoptimized
 
 ```
-Hash: 0a1b2c3d4e5f6a7b8c9d
-Version: webpack 4.39.0
-    Asset      Size  Chunks             Chunk Names
-vendor.js  4.28 KiB       0  [emitted]  main
-Entrypoint main = vendor.js
-chunk    {0} vendor.js (main) 57 bytes [entry] [rendered]
-    > main
- [0] dll main 12 bytes {0} [built]
-     dll entry 
-      DllPlugin
-     + 1 hidden module
+Hash: [1m350b0c06610fb1884d69[39m[22m
+Version: webpack [1m4.39.2[39m[22m
+Time: [1m87[39m[22mms
+    [1mAsset[39m[22m      [1mSize[39m[22m                       [1mChunks[39m[22m  [1m[39m[22m           [1m[39m[22m[1mChunk Names[39m[22m
+[1m[32mvendor.js[39m[22m  1.04 KiB  [1mvendor_350b0c06610fb1884d69[39m[22m  [1m[32m[emitted][39m[22m  vendor
+Entrypoint [1mvendor[39m[22m =
+chunk {[1m[33mvendor_350b0c06610fb1884d69[39m[22m} [1m[32mvendor.js[39m[22m (vendor) 95 bytes <{[1m[33m[39m[22m}>[1m[32m [rendered][39m[22m
+    > (webpack)\examples\dll-app-and-vendor\node_modules\example-vendor.js [0] vendor[0]
+    > (webpack)\examples\dll-app-and-vendor\node_modules\example-vendor2.js [0] vendor[1]
+    2 modules
 ```
 
 ## Production mode
 
 ```
-Hash: 0a1b2c3d4e5f6a7b8c9d
-Version: webpack 4.39.0
-    Asset      Size  Chunks             Chunk Names
-vendor.js  1.06 KiB       0  [emitted]  main
-Entrypoint main = vendor.js
-chunk    {0} vendor.js (main) 57 bytes [entry] [rendered]
-    > main
- [0] dll main 12 bytes {0} [built]
-     dll entry 
-      DllPlugin
-     + 1 hidden module
+Hash: [1m9bf4fa80b8bf1b792134[39m[22m
+Version: webpack [1m4.39.2[39m[22m
+Time: [1m100[39m[22mms
+    [1mAsset[39m[22m       [1mSize[39m[22m                       [1mChunks[39m[22m  [1m[39m[22m           [1m[39m[22m[1mChunk Names[39m[22m
+[1m[32mvendor.js[39m[22m  288 bytes  [1mvendor_9bf4fa80b8bf1b792134[39m[22m  [1m[32m[emitted][39m[22m  vendor
+Entrypoint [1mvendor[39m[22m =
+chunk {[1m[33mvendor_9bf4fa80b8bf1b792134[39m[22m} [1m[32mvendor.js[39m[22m (vendor) 95 bytes <{[1m[33m[39m[22m}>[1m[32m [rendered][39m[22m
+    > (webpack)\examples\dll-app-and-vendor\node_modules\example-vendor.js [0] vendor[0]
+    > (webpack)\examples\dll-app-and-vendor\node_modules\example-vendor2.js [0] vendor[1]
+    2 modules
 ```

@@ -1,7 +1,7 @@
 {
   "title": "DllPluginOptions",
   "type": "object",
-  "additionalProperties": false,
+  "additionalProperties": true,
   "properties": {
     "context": {
       "description": "Context of requests in the manifest file (defaults to the webpack context)",

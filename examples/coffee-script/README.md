@@ -166,37 +166,39 @@ module.exports = 42;
 ## Unoptimized
 
 ```
-Hash: 0a1b2c3d4e5f6a7b8c9d
-Version: webpack 4.39.0
-    Asset      Size  Chunks             Chunk Names
-output.js  4.31 KiB       0  [emitted]  main
-Entrypoint main = output.js
-chunk    {0} output.js (main) 206 bytes [entry] [rendered]
+Hash: [1me51711b99ce71779ff80[39m[22m
+Version: webpack [1m4.39.2[39m[22m
+Time: [1m419[39m[22mms
+    [1mAsset[39m[22m      [1mSize[39m[22m  [1mChunks[39m[22m  [1m[39m[22m           [1m[39m[22m[1mChunk Names[39m[22m
+[1m[32moutput.js[39m[22m  4.31 KiB       [1m0[39m[22m  [1m[32m[emitted][39m[22m  main
+Entrypoint [1mmain[39m[22m = [1m[32moutput.js[39m[22m
+chunk    {[1m[33m0[39m[22m} [1m[32moutput.js[39m[22m (main) 206 bytes[1m[33m [entry][39m[22m[1m[32m [rendered][39m[22m
     > ./example.js main
- [0] ./example.js 31 bytes {0} [built]
-     single entry ./example.js  main
- [1] ./cup1.coffee 118 bytes {0} [built]
-     cjs require ./cup1 [0] ./example.js 1:12-29
- [2] ./cup2.coffee 57 bytes {0} [built]
-     cjs require ./cup2.coffee [1] ./cup1.coffee 4:12-36
-     cjs require ./cup2 [1] ./cup1.coffee 5:9-26
+ [0] [1m./example.js[39m[22m 31 bytes {[1m[33m0[39m[22m}[1m[32m [built][39m[22m
+     single entry [1m[36m./example.js[39m[22m  main
+ [1] [1m./cup1.coffee[39m[22m 118 bytes {[1m[33m0[39m[22m}[1m[32m [built][39m[22m
+     cjs require [1m[36m./cup1[39m[22m [0] [1m[35m./example.js[39m[22m 1:12-29
+ [2] [1m./cup2.coffee[39m[22m 57 bytes {[1m[33m0[39m[22m}[1m[32m [built][39m[22m
+     cjs require [1m[36m./cup2.coffee[39m[22m [1] [1m[35m./cup1.coffee[39m[22m 4:12-36
+     cjs require [1m[36m./cup2[39m[22m [1] [1m[35m./cup1.coffee[39m[22m 5:9-26
 ```
 
 ## Production mode
 
 ```
-Hash: 0a1b2c3d4e5f6a7b8c9d
-Version: webpack 4.39.0
-    Asset      Size  Chunks             Chunk Names
-output.js  1.07 KiB       0  [emitted]  main
-Entrypoint main = output.js
-chunk    {0} output.js (main) 206 bytes [entry] [rendered]
+Hash: [1m5ebaad2596bd79be2c8d[39m[22m
+Version: webpack [1m4.39.2[39m[22m
+Time: [1m790[39m[22mms
+    [1mAsset[39m[22m      [1mSize[39m[22m  [1mChunks[39m[22m  [1m[39m[22m           [1m[39m[22m[1mChunk Names[39m[22m
+[1m[32moutput.js[39m[22m  1.07 KiB       [1m0[39m[22m  [1m[32m[emitted][39m[22m  main
+Entrypoint [1mmain[39m[22m = [1m[32moutput.js[39m[22m
+chunk    {[1m[33m0[39m[22m} [1m[32moutput.js[39m[22m (main) 206 bytes[1m[33m [entry][39m[22m[1m[32m [rendered][39m[22m
     > ./example.js main
- [0] ./cup2.coffee 57 bytes {0} [built]
-     cjs require ./cup2.coffee [2] ./cup1.coffee 4:12-36
-     cjs require ./cup2 [2] ./cup1.coffee 5:9-26
- [1] ./example.js 31 bytes {0} [built]
-     single entry ./example.js  main
- [2] ./cup1.coffee 118 bytes {0} [built]
-     cjs require ./cup1 [1] ./example.js 1:12-29
+ [0] [1m./cup2.coffee[39m[22m 57 bytes {[1m[33m0[39m[22m}[1m[32m [built][39m[22m
+     cjs require [1m[36m./cup2.coffee[39m[22m [2] [1m[35m./cup1.coffee[39m[22m 4:12-36
+     cjs require [1m[36m./cup2[39m[22m [2] [1m[35m./cup1.coffee[39m[22m 5:9-26
+ [1] [1m./example.js[39m[22m 31 bytes {[1m[33m0[39m[22m}[1m[32m [built][39m[22m
+     single entry [1m[36m./example.js[39m[22m  main
+ [2] [1m./cup1.coffee[39m[22m 118 bytes {[1m[33m0[39m[22m}[1m[32m [built][39m[22m
+     cjs require [1m[36m./cup1[39m[22m [1] [1m[35m./example.js[39m[22m 1:12-29
 ```

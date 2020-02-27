@@ -1,19 +1,22 @@
 var path = require("path");
 var webpack = require("../../../");
-
 module.exports = {
 	// mode: "development || "production",
 	context: __dirname,
-	entry: ["example-vendor"],
+	entry: {
+		vendor: ["example-vendor", "example-vendor2"],
+		// vendor: ["example-vendor2"]
+	},
 	output: {
-		filename: "vendor.js", // best use [hash] here too
-		path: path.resolve(__dirname, "dist"),
-		library: "vendor_lib_[hash]"
+		filename: "[name]_[hash].js", // best use [hash] here too
+		path: path.resolve(__dirname, "dist")
 	},
 	plugins: [
+		// new webpack.HashedModuleIdsPlugin(),
 		new webpack.DllPlugin({
-			name: "vendor_lib_[hash]",
-			path: path.resolve(__dirname, "dist/vendor-manifest.json")
+			name: "[name]_[hash]",
+			path: path.resolve(__dirname, "./dist/[name]-manifest.json"),
+			// asyncChunks: ["vendor"]
 		})
 	]
 };

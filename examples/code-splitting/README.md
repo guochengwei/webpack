@@ -326,37 +326,39 @@ Minimized
 ## Unoptimized
 
 ```
-Hash: 0a1b2c3d4e5f6a7b8c9d
-Version: webpack 4.39.0
-      Asset       Size  Chunks             Chunk Names
-1.output.js  490 bytes       1  [emitted]  
-  output.js   8.91 KiB       0  [emitted]  main
-Entrypoint main = output.js
-chunk    {0} output.js (main) 161 bytes >{1}< [entry] [rendered]
+Hash: [1mf9fb0e824824c11cebe3[39m[22m
+Version: webpack [1m4.39.2[39m[22m
+Time: [1m368[39m[22mms
+      [1mAsset[39m[22m       [1mSize[39m[22m  [1mChunks[39m[22m  [1m[39m[22m           [1m[39m[22m[1mChunk Names[39m[22m
+[1m[32m1.output.js[39m[22m  490 bytes       [1m1[39m[22m  [1m[32m[emitted][39m[22m  
+  [1m[32moutput.js[39m[22m   8.92 KiB       [1m0[39m[22m  [1m[32m[emitted][39m[22m  main
+Entrypoint [1mmain[39m[22m = [1m[32moutput.js[39m[22m
+chunk    {[1m[33m0[39m[22m} [1m[32moutput.js[39m[22m (main) 166 bytes >{[1m[33m1[39m[22m}<[1m[33m [entry][39m[22m[1m[32m [rendered][39m[22m
     > ./example.js main
- [1] ./example.js 139 bytes {0} [built]
-     single entry ./example.js  main
+ [1] [1m./example.js[39m[22m 144 bytes {[1m[33m0[39m[22m}[1m[32m [built][39m[22m
+     single entry [1m[36m./example.js[39m[22m  main
      + 2 hidden modules
-chunk    {1} 1.output.js 22 bytes <{0}> [rendered]
-    > [1] ./example.js 3:0-6:2
+chunk    {[1m[33m1[39m[22m} [1m[32m1.output.js[39m[22m 22 bytes <{[1m[33m0[39m[22m}>[1m[32m [rendered][39m[22m
+    > [1] [1m./example.js[39m[22m 3:0-6:2
     2 modules
 ```
 
 ## Production mode
 
 ```
-Hash: 0a1b2c3d4e5f6a7b8c9d
-Version: webpack 4.39.0
-      Asset      Size  Chunks             Chunk Names
-1.output.js  95 bytes       1  [emitted]  
-  output.js  2.13 KiB       0  [emitted]  main
-Entrypoint main = output.js
-chunk    {0} output.js (main) 161 bytes >{1}< [entry] [rendered]
+Hash: [1m6b348f1d7511723c6833[39m[22m
+Version: webpack [1m4.39.2[39m[22m
+Time: [1m903[39m[22mms
+      [1mAsset[39m[22m      [1mSize[39m[22m  [1mChunks[39m[22m  [1m[39m[22m           [1m[39m[22m[1mChunk Names[39m[22m
+[1m[32m1.output.js[39m[22m  95 bytes       [1m1[39m[22m  [1m[32m[emitted][39m[22m  
+  [1m[32moutput.js[39m[22m  2.13 KiB       [1m0[39m[22m  [1m[32m[emitted][39m[22m  main
+Entrypoint [1mmain[39m[22m = [1m[32moutput.js[39m[22m
+chunk    {[1m[33m0[39m[22m} [1m[32moutput.js[39m[22m (main) 166 bytes >{[1m[33m1[39m[22m}<[1m[33m [entry][39m[22m[1m[32m [rendered][39m[22m
     > ./example.js main
- [1] ./example.js 139 bytes {0} [built]
-     single entry ./example.js  main
+ [1] [1m./example.js[39m[22m 144 bytes {[1m[33m0[39m[22m}[1m[32m [built][39m[22m
+     single entry [1m[36m./example.js[39m[22m  main
      + 2 hidden modules
-chunk    {1} 1.output.js 22 bytes <{0}> [rendered]
-    > [1] ./example.js 3:0-6:2
+chunk    {[1m[33m1[39m[22m} [1m[32m1.output.js[39m[22m 22 bytes <{[1m[33m0[39m[22m}>[1m[32m [rendered][39m[22m
+    > [1] [1m./example.js[39m[22m 3:0-6:2
     2 modules
 ```

@@ -311,53 +311,55 @@ __webpack_require__.e(/*! import() */ 3).then(__webpack_require__.t.bind(null, /
 ## Unoptimized
 
 ```
-Hash: 0a1b2c3d4e5f6a7b8c9d
-Version: webpack 4.39.0
-                    Asset       Size  Chunks             Chunk Names
-           2.[chunkhash].js  269 bytes       2  [emitted]  
-           3.[chunkhash].js  263 bytes       3  [emitted]  
-        main.[chunkhash].js  485 bytes       1  [emitted]  main
-runtime~main.[chunkhash].js   8.94 KiB       0  [emitted]  runtime~main
-Entrypoint main = runtime~main.[chunkhash].js main.[chunkhash].js
-chunk    {0} runtime~main.[chunkhash].js (runtime~main) 0 bytes ={1}= >{2}< >{3}< [entry] [rendered]
+Hash: [1m85b0a63c4fca75e87c7e[39m[22m
+Version: webpack [1m4.39.2[39m[22m
+Time: [1m230[39m[22mms
+                    [1mAsset[39m[22m       [1mSize[39m[22m  [1mChunks[39m[22m  [1m[39m[22m           [1m[39m[22m[1mChunk Names[39m[22m
+           [1m[32m2.[chunkhash].js[39m[22m  270 bytes       [1m2[39m[22m  [1m[32m[emitted][39m[22m  
+           [1m[32m3.[chunkhash].js[39m[22m  264 bytes       [1m3[39m[22m  [1m[32m[emitted][39m[22m  
+        [1m[32mmain.[chunkhash].js[39m[22m  488 bytes       [1m1[39m[22m  [1m[32m[emitted][39m[22m  main
+[1m[32mruntime~main.[chunkhash].js[39m[22m   8.94 KiB       [1m0[39m[22m  [1m[32m[emitted][39m[22m  runtime~main
+Entrypoint [1mmain[39m[22m = [1m[32mruntime~main.[chunkhash].js[39m[22m [1m[32mmain.[chunkhash].js[39m[22m
+chunk    {[1m[33m0[39m[22m} [1m[32mruntime~main.[chunkhash].js[39m[22m (runtime~main) 0 bytes ={[1m[33m1[39m[22m}= >{[1m[33m2[39m[22m}< >{[1m[33m3[39m[22m}<[1m[33m [entry][39m[22m[1m[32m [rendered][39m[22m
     > ./example main
-chunk    {1} main.[chunkhash].js (main) 55 bytes ={0}= >{2}< >{3}< [initial] [rendered]
+chunk    {[1m[33m1[39m[22m} [1m[32mmain.[chunkhash].js[39m[22m (main) 58 bytes ={[1m[33m0[39m[22m}= >{[1m[33m2[39m[22m}< >{[1m[33m3[39m[22m}<[1m[33m [initial][39m[22m[1m[32m [rendered][39m[22m
     > ./example main
- [0] ./example.js 55 bytes {1} [built]
-     single entry ./example  main
-chunk    {2} 2.[chunkhash].js 28 bytes <{0}> <{1}> [rendered]
-    > ./async1 [0] ./example.js 2:0-18
- [1] ./async1.js 28 bytes {2} [built]
-     import() ./async1 [0] ./example.js 2:0-18
-chunk    {3} 3.[chunkhash].js 28 bytes <{0}> <{1}> [rendered]
-    > ./async2 [0] ./example.js 3:0-18
- [2] ./async2.js 28 bytes {3} [built]
-     import() ./async2 [0] ./example.js 3:0-18
+ [0] [1m./example.js[39m[22m 58 bytes {[1m[33m1[39m[22m}[1m[32m [built][39m[22m
+     single entry [1m[36m./example[39m[22m  main
+chunk    {[1m[33m2[39m[22m} [1m[32m2.[chunkhash].js[39m[22m 29 bytes <{[1m[33m0[39m[22m}> <{[1m[33m1[39m[22m}>[1m[32m [rendered][39m[22m
+    > ./async1 [0] [1m./example.js[39m[22m 2:0-18
+ [1] [1m./async1.js[39m[22m 29 bytes {[1m[33m2[39m[22m}[1m[32m [built][39m[22m
+     import() [1m[36m./async1[39m[22m [0] [1m[35m./example.js[39m[22m 2:0-18
+chunk    {[1m[33m3[39m[22m} [1m[32m3.[chunkhash].js[39m[22m 29 bytes <{[1m[33m0[39m[22m}> <{[1m[33m1[39m[22m}>[1m[32m [rendered][39m[22m
+    > ./async2 [0] [1m./example.js[39m[22m 3:0-18
+ [2] [1m./async2.js[39m[22m 29 bytes {[1m[33m3[39m[22m}[1m[32m [built][39m[22m
+     import() [1m[36m./async2[39m[22m [0] [1m[35m./example.js[39m[22m 3:0-18
 ```
 
 ## Production mode
 
 ```
-Hash: 0a1b2c3d4e5f6a7b8c9d
-Version: webpack 4.39.0
-                    Asset       Size  Chunks             Chunk Names
-           2.[chunkhash].js   77 bytes       2  [emitted]  
-           3.[chunkhash].js   78 bytes       3  [emitted]  
-        main.[chunkhash].js  149 bytes       0  [emitted]  main
-runtime~main.[chunkhash].js   2.21 KiB       1  [emitted]  runtime~main
-Entrypoint main = runtime~main.[chunkhash].js main.[chunkhash].js
-chunk    {0} main.[chunkhash].js (main) 55 bytes ={1}= >{2}< >{3}< [initial] [rendered]
+Hash: [1m56aee4b80c33b4248e1f[39m[22m
+Version: webpack [1m4.39.2[39m[22m
+Time: [1m1049[39m[22mms
+                    [1mAsset[39m[22m       [1mSize[39m[22m  [1mChunks[39m[22m  [1m[39m[22m           [1m[39m[22m[1mChunk Names[39m[22m
+           [1m[32m2.[chunkhash].js[39m[22m   77 bytes       [1m2[39m[22m  [1m[32m[emitted][39m[22m  
+           [1m[32m3.[chunkhash].js[39m[22m   78 bytes       [1m3[39m[22m  [1m[32m[emitted][39m[22m  
+        [1m[32mmain.[chunkhash].js[39m[22m  149 bytes       [1m0[39m[22m  [1m[32m[emitted][39m[22m  main
+[1m[32mruntime~main.[chunkhash].js[39m[22m   2.21 KiB       [1m1[39m[22m  [1m[32m[emitted][39m[22m  runtime~main
+Entrypoint [1mmain[39m[22m = [1m[32mruntime~main.[chunkhash].js[39m[22m [1m[32mmain.[chunkhash].js[39m[22m
+chunk    {[1m[33m0[39m[22m} [1m[32mmain.[chunkhash].js[39m[22m (main) 58 bytes ={[1m[33m1[39m[22m}= >{[1m[33m2[39m[22m}< >{[1m[33m3[39m[22m}<[1m[33m [initial][39m[22m[1m[32m [rendered][39m[22m
     > ./example main
- [0] ./example.js 55 bytes {0} [built]
-     single entry ./example  main
-chunk    {1} runtime~main.[chunkhash].js (runtime~main) 0 bytes ={0}= >{2}< >{3}< [entry] [rendered]
+ [0] [1m./example.js[39m[22m 58 bytes {[1m[33m0[39m[22m}[1m[32m [built][39m[22m
+     single entry [1m[36m./example[39m[22m  main
+chunk    {[1m[33m1[39m[22m} [1m[32mruntime~main.[chunkhash].js[39m[22m (runtime~main) 0 bytes ={[1m[33m0[39m[22m}= >{[1m[33m2[39m[22m}< >{[1m[33m3[39m[22m}<[1m[33m [entry][39m[22m[1m[32m [rendered][39m[22m
     > ./example main
-chunk    {2} 2.[chunkhash].js 28 bytes <{0}> <{1}> [rendered]
-    > ./async1 [0] ./example.js 2:0-18
- [1] ./async1.js 28 bytes {2} [built]
-     import() ./async1 [0] ./example.js 2:0-18
-chunk    {3} 3.[chunkhash].js 28 bytes <{0}> <{1}> [rendered]
-    > ./async2 [0] ./example.js 3:0-18
- [2] ./async2.js 28 bytes {3} [built]
-     import() ./async2 [0] ./example.js 3:0-18
+chunk    {[1m[33m2[39m[22m} [1m[32m2.[chunkhash].js[39m[22m 29 bytes <{[1m[33m0[39m[22m}> <{[1m[33m1[39m[22m}>[1m[32m [rendered][39m[22m
+    > ./async1 [0] [1m./example.js[39m[22m 2:0-18
+ [1] [1m./async1.js[39m[22m 29 bytes {[1m[33m2[39m[22m}[1m[32m [built][39m[22m
+     import() [1m[36m./async1[39m[22m [0] [1m[35m./example.js[39m[22m 2:0-18
+chunk    {[1m[33m3[39m[22m} [1m[32m3.[chunkhash].js[39m[22m 29 bytes <{[1m[33m0[39m[22m}> <{[1m[33m1[39m[22m}>[1m[32m [rendered][39m[22m
+    > ./async2 [0] [1m./example.js[39m[22m 3:0-18
+ [2] [1m./async2.js[39m[22m 29 bytes {[1m[33m3[39m[22m}[1m[32m [built][39m[22m
+     import() [1m[36m./async2[39m[22m [0] [1m[35m./example.js[39m[22m 3:0-18
 ```

@@ -27,7 +27,7 @@ and [scope hoisting example](https://github.com/webpack/webpack/tree/master/exam
 # example.js
 
 ```javascript
-export { a, b } from "./a";
+export { a } from "./a";
 export { c } from "./cjs";
 ```
 
@@ -63,7 +63,7 @@ module.exports = {
 # dist/dll.js
 
 ```javascript
-var dll_3eea518f6d09aac41ec7 =
+var dll_a9291dda3785f40b0122 =
 ```
 <details><summary><code>/******/ (function(modules) { /* webpackBootstrap */ })</code></summary>
 
@@ -188,7 +188,7 @@ exports.c = "c";
 /*!********************************!*\
   !*** ./example.js + 2 modules ***!
   \********************************/
-/*! exports provided: a, b, c */
+/*! exports provided: a, c */
 /*! ModuleConcatenation bailout: Cannot concat with ./cjs.js (<- Module is not an ECMAScript module) */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -211,7 +211,6 @@ var cjs = __webpack_require__(1);
 
 // CONCATENATED MODULE: ./example.js
 /* concated harmony reexport a */__webpack_require__.d(__webpack_exports__, "a", function() { return a; });
-/* concated harmony reexport b */__webpack_require__.d(__webpack_exports__, "b", function() { return b; });
 /* concated harmony reexport c */__webpack_require__.d(__webpack_exports__, "c", function() { return cjs["c"]; });
 
 
@@ -224,7 +223,7 @@ var cjs = __webpack_require__(1);
 # dist/dll-manifest.json
 
 ```javascript
-{"name":"dll_3eea518f6d09aac41ec7","content":{"./example.js":{"id":2,"buildMeta":{"exportsType":"namespace","providedExports":["a","b","c"]}}}}
+{"name":"dll_a9291dda3785f40b0122","content":{"./example.js":{"id":2,"buildMeta":{"exportsType":"namespace","providedExports":["a","c"]}}}}
 ```
 
 # Info
@@ -233,29 +232,28 @@ var cjs = __webpack_require__(1);
 
 ```
 Hash: 0a1b2c3d4e5f6a7b8c9d
-Version: webpack 4.39.0
+Version: webpack 4.39.2
  Asset      Size  Chunks             Chunk Names
-dll.js  5.03 KiB       0  [emitted]  dll
+dll.js  4.93 KiB       0  [emitted]  dll
 Entrypoint dll = dll.js
-chunk    {0} dll.js (dll) 216 bytes [entry] [rendered]
+chunk    {0} dll.js (dll) 224 bytes [entry] [rendered]
     > dll
  [0] dll dll 12 bytes {0} [built]
      dll entry 
- [1] ./cjs.js 42 bytes {0} [built]
+ [1] ./cjs.js 44 bytes {0} [built]
      harmony side effect evaluation ./cjs [2] ./example.js + 2 modules 2:0-26
      harmony export imported specifier ./cjs [2] ./example.js + 2 modules 2:0-26
- [2] ./example.js + 2 modules 162 bytes {0} [built]
-     [exports: a, b, c]
+ [2] ./example.js + 2 modules 168 bytes {0} [built]
+     [exports: a, c]
      single entry ./example [0] dll dll dll[0]
-     | ./example.js 55 bytes [built]
-     |     [exports: a, b, c]
+     | ./example.js 54 bytes [built]
+     |     [exports: a, c]
      |     single entry ./example [0] dll dll dll[0]
-     | ./a.js 53 bytes [built]
+     | ./a.js 56 bytes [built]
      |     [exports: a, b]
-     |     harmony side effect evaluation ./a  ./example.js 1:0-27
-     |     harmony export imported specifier ./a  ./example.js 1:0-27
-     |     harmony export imported specifier ./a  ./example.js 1:0-27
-     | ./b.js 49 bytes [built]
+     |     harmony side effect evaluation ./a  ./example.js 1:0-24
+     |     harmony export imported specifier ./a  ./example.js 1:0-24
+     | ./b.js 53 bytes [built]
      |     [exports: b]
      |     harmony side effect evaluation ./b  ./a.js 3:0-20
      |     harmony export imported specifier ./b  ./a.js 3:0-20
@@ -265,33 +263,32 @@ chunk    {0} dll.js (dll) 216 bytes [entry] [rendered]
 
 ```
 Hash: 0a1b2c3d4e5f6a7b8c9d
-Version: webpack 4.39.0
+Version: webpack 4.39.2
  Asset      Size  Chunks             Chunk Names
-dll.js  1.15 KiB       0  [emitted]  dll
+dll.js  1.09 KiB       0  [emitted]  dll
 Entrypoint dll = dll.js
-chunk    {0} dll.js (dll) 216 bytes [entry] [rendered]
+chunk    {0} dll.js (dll) 224 bytes [entry] [rendered]
     > dll
- [0] ./cjs.js 42 bytes {0} [built]
+ [0] ./cjs.js 44 bytes {0} [built]
      [only some exports used: c]
      harmony side effect evaluation ./cjs [2] ./example.js + 2 modules 2:0-26
      harmony export imported specifier ./cjs [2] ./example.js + 2 modules 2:0-26
  [1] dll dll 12 bytes {0} [built]
      dll entry 
- [2] ./example.js + 2 modules 162 bytes {0} [built]
-     [exports: a, b, c]
+ [2] ./example.js + 2 modules 168 bytes {0} [built]
+     [exports: a, c]
      single entry ./example [1] dll dll dll[0]
-     | ./example.js 55 bytes [built]
-     |     [exports: a, b, c]
+     | ./example.js 54 bytes [built]
+     |     [exports: a, c]
      |     single entry ./example [1] dll dll dll[0]
-     | ./a.js 53 bytes [built]
+     | ./a.js 56 bytes [built]
      |     [exports: a, b]
-     |     [all exports used]
-     |     harmony side effect evaluation ./a  ./example.js 1:0-27
-     |     harmony export imported specifier ./a  ./example.js 1:0-27
-     |     harmony export imported specifier ./a  ./example.js 1:0-27
-     | ./b.js 49 bytes [built]
+     |     [only some exports used: a]
+     |     harmony side effect evaluation ./a  ./example.js 1:0-24
+     |     harmony export imported specifier ./a  ./example.js 1:0-24
+     | ./b.js 53 bytes [built]
      |     [exports: b]
-     |     [all exports used]
+     |     [no exports used]
      |     harmony side effect evaluation ./b  ./a.js 3:0-20
      |     harmony export imported specifier ./b  ./a.js 3:0-20
 ```

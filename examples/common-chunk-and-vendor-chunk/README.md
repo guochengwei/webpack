@@ -693,97 +693,99 @@ module.exports = "pageC";
 ## Unoptimized
 
 ```
-Hash: 0a1b2c3d4e5f6a7b8c9d
-Version: webpack 4.39.0
-                       Asset       Size  Chunks             Chunk Names
-commons~pageA~pageB~pageC.js  269 bytes       2  [emitted]  commons~pageA~pageB~pageC
-      commons~pageB~pageC.js  269 bytes       4  [emitted]  commons~pageB~pageC
-                    pageA.js   6.77 KiB       0  [emitted]  pageA
-                    pageB.js   6.58 KiB       3  [emitted]  pageB
-                    pageC.js   6.52 KiB       5  [emitted]  pageC
-                   vendor.js  536 bytes       1  [emitted]  vendor
-Entrypoint pageA = vendor.js commons~pageA~pageB~pageC.js pageA.js
-Entrypoint pageB = vendor.js commons~pageA~pageB~pageC.js commons~pageB~pageC.js pageB.js
-Entrypoint pageC = commons~pageA~pageB~pageC.js commons~pageB~pageC.js pageC.js
-chunk    {0} pageA.js (pageA) 165 bytes ={1}= ={2}= [entry] [rendered]
+Hash: [1m90e1072adc384329215d[39m[22m
+Version: webpack [1m4.39.2[39m[22m
+Time: [1m338[39m[22mms
+                       [1mAsset[39m[22m       [1mSize[39m[22m  [1mChunks[39m[22m  [1m[39m[22m           [1m[39m[22m[1mChunk Names[39m[22m
+[1m[32mcommons~pageA~pageB~pageC.js[39m[22m  269 bytes       [1m2[39m[22m  [1m[32m[emitted][39m[22m  commons~pageA~pageB~pageC
+      [1m[32mcommons~pageB~pageC.js[39m[22m  269 bytes       [1m4[39m[22m  [1m[32m[emitted][39m[22m  commons~pageB~pageC
+                    [1m[32mpageA.js[39m[22m   6.78 KiB       [1m0[39m[22m  [1m[32m[emitted][39m[22m  pageA
+                    [1m[32mpageB.js[39m[22m   6.58 KiB       [1m3[39m[22m  [1m[32m[emitted][39m[22m  pageB
+                    [1m[32mpageC.js[39m[22m   6.53 KiB       [1m5[39m[22m  [1m[32m[emitted][39m[22m  pageC
+                   [1m[32mvendor.js[39m[22m  536 bytes       [1m1[39m[22m  [1m[32m[emitted][39m[22m  vendor
+Entrypoint [1mpageA[39m[22m = [1m[32mvendor.js[39m[22m [1m[32mcommons~pageA~pageB~pageC.js[39m[22m [1m[32mpageA.js[39m[22m
+Entrypoint [1mpageB[39m[22m = [1m[32mvendor.js[39m[22m [1m[32mcommons~pageA~pageB~pageC.js[39m[22m [1m[32mcommons~pageB~pageC.js[39m[22m [1m[32mpageB.js[39m[22m
+Entrypoint [1mpageC[39m[22m = [1m[32mcommons~pageA~pageB~pageC.js[39m[22m [1m[32mcommons~pageB~pageC.js[39m[22m [1m[32mpageC.js[39m[22m
+chunk    {[1m[33m0[39m[22m} [1m[32mpageA.js[39m[22m (pageA) 170 bytes ={[1m[33m1[39m[22m}= ={[1m[33m2[39m[22m}=[1m[33m [entry][39m[22m[1m[32m [rendered][39m[22m
     > ./pageA pageA
- [0] ./pageA.js 137 bytes {0} [built]
-     single entry ./pageA  pageA
- [2] ./utility1.js 28 bytes {0} [built]
-     cjs require ./utility1 [0] ./pageA.js 2:15-36
-chunk    {1} vendor.js (vendor) 54 bytes ={0}= ={2}= ={3}= ={4}= [initial] [rendered] split chunk (cache group: vendor) (name: vendor)
+ [0] [1m./pageA.js[39m[22m 142 bytes {[1m[33m0[39m[22m}[1m[32m [built][39m[22m
+     single entry [1m[36m./pageA[39m[22m  pageA
+ [2] [1m./utility1.js[39m[22m 28 bytes {[1m[33m0[39m[22m}[1m[32m [built][39m[22m
+     cjs require [1m[36m./utility1[39m[22m [0] [1m[35m./pageA.js[39m[22m 2:15-36
+chunk    {[1m[33m1[39m[22m} [1m[32mvendor.js[39m[22m (vendor) 54 bytes ={[1m[33m0[39m[22m}= ={[1m[33m2[39m[22m}= ={[1m[33m3[39m[22m}= ={[1m[33m4[39m[22m}=[1m[33m [initial][39m[22m[1m[32m [rendered][39m[22m[1m[33m split chunk (cache group: vendor) (name: vendor)[39m[22m
     > ./pageA pageA
     > ./pageB pageB
     2 modules
-chunk    {2} commons~pageA~pageB~pageC.js (commons~pageA~pageB~pageC) 28 bytes ={0}= ={1}= ={3}= ={4}= ={5}= [initial] [rendered] split chunk (cache group: commons) (name: commons~pageA~pageB~pageC)
+chunk    {[1m[33m2[39m[22m} [1m[32mcommons~pageA~pageB~pageC.js[39m[22m (commons~pageA~pageB~pageC) 28 bytes ={[1m[33m0[39m[22m}= ={[1m[33m1[39m[22m}= ={[1m[33m3[39m[22m}= ={[1m[33m4[39m[22m}= ={[1m[33m5[39m[22m}=[1m[33m [initial][39m[22m[1m[32m [rendered][39m[22m[1m[33m split chunk (cache group: commons) (name: commons~pageA~pageB~pageC)[39m[22m
     > ./pageA pageA
     > ./pageB pageB
     > ./pageC pageC
- [3] ./utility2.js 28 bytes {2} [built]
-     cjs require ./utility2 [0] ./pageA.js 3:15-36
-     cjs require ./utility2 [4] ./pageB.js 2:15-36
-     cjs require ./utility2 [7] ./pageC.js 1:15-36
-chunk    {3} pageB.js (pageB) 137 bytes ={1}= ={2}= ={4}= [entry] [rendered]
+ [3] [1m./utility2.js[39m[22m 28 bytes {[1m[33m2[39m[22m}[1m[32m [built][39m[22m
+     cjs require [1m[36m./utility2[39m[22m [0] [1m[35m./pageA.js[39m[22m 3:15-36
+     cjs require [1m[36m./utility2[39m[22m [4] [1m[35m./pageB.js[39m[22m 2:15-36
+     cjs require [1m[36m./utility2[39m[22m [7] [1m[35m./pageC.js[39m[22m 1:15-36
+chunk    {[1m[33m3[39m[22m} [1m[32mpageB.js[39m[22m (pageB) 142 bytes ={[1m[33m1[39m[22m}= ={[1m[33m2[39m[22m}= ={[1m[33m4[39m[22m}=[1m[33m [entry][39m[22m[1m[32m [rendered][39m[22m
     > ./pageB pageB
- [4] ./pageB.js 137 bytes {3} [built]
-     single entry ./pageB  pageB
-chunk    {4} commons~pageB~pageC.js (commons~pageB~pageC) 28 bytes ={1}= ={2}= ={3}= ={5}= [initial] [rendered] split chunk (cache group: commons) (name: commons~pageB~pageC)
+ [4] [1m./pageB.js[39m[22m 142 bytes {[1m[33m3[39m[22m}[1m[32m [built][39m[22m
+     single entry [1m[36m./pageB[39m[22m  pageB
+chunk    {[1m[33m4[39m[22m} [1m[32mcommons~pageB~pageC.js[39m[22m (commons~pageB~pageC) 28 bytes ={[1m[33m1[39m[22m}= ={[1m[33m2[39m[22m}= ={[1m[33m3[39m[22m}= ={[1m[33m5[39m[22m}=[1m[33m [initial][39m[22m[1m[32m [rendered][39m[22m[1m[33m split chunk (cache group: commons) (name: commons~pageB~pageC)[39m[22m
     > ./pageB pageB
     > ./pageC pageC
- [6] ./utility3.js 28 bytes {4} [built]
-     cjs require ./utility3 [4] ./pageB.js 3:15-36
-     cjs require ./utility3 [7] ./pageC.js 2:15-36
-chunk    {5} pageC.js (pageC) 102 bytes ={2}= ={4}= [entry] [rendered]
+ [6] [1m./utility3.js[39m[22m 28 bytes {[1m[33m4[39m[22m}[1m[32m [built][39m[22m
+     cjs require [1m[36m./utility3[39m[22m [4] [1m[35m./pageB.js[39m[22m 3:15-36
+     cjs require [1m[36m./utility3[39m[22m [7] [1m[35m./pageC.js[39m[22m 2:15-36
+chunk    {[1m[33m5[39m[22m} [1m[32mpageC.js[39m[22m (pageC) 105 bytes ={[1m[33m2[39m[22m}= ={[1m[33m4[39m[22m}=[1m[33m [entry][39m[22m[1m[32m [rendered][39m[22m
     > ./pageC pageC
- [7] ./pageC.js 102 bytes {5} [built]
-     single entry ./pageC  pageC
+ [7] [1m./pageC.js[39m[22m 105 bytes {[1m[33m5[39m[22m}[1m[32m [built][39m[22m
+     single entry [1m[36m./pageC[39m[22m  pageC
 ```
 
 ## Production mode
 
 ```
-Hash: 0a1b2c3d4e5f6a7b8c9d
-Version: webpack 4.39.0
-                       Asset       Size  Chunks             Chunk Names
-commons~pageA~pageB~pageC.js   96 bytes       0  [emitted]  commons~pageA~pageB~pageC
-      commons~pageB~pageC.js   97 bytes       1  [emitted]  commons~pageB~pageC
-                    pageA.js   1.56 KiB       3  [emitted]  pageA
-                    pageB.js   1.53 KiB       4  [emitted]  pageB
-                    pageC.js   1.52 KiB       5  [emitted]  pageC
-                   vendor.js  134 bytes       2  [emitted]  vendor
-Entrypoint pageA = vendor.js commons~pageA~pageB~pageC.js pageA.js
-Entrypoint pageB = vendor.js commons~pageA~pageB~pageC.js commons~pageB~pageC.js pageB.js
-Entrypoint pageC = commons~pageA~pageB~pageC.js commons~pageB~pageC.js pageC.js
-chunk    {0} commons~pageA~pageB~pageC.js (commons~pageA~pageB~pageC) 28 bytes ={1}= ={2}= ={3}= ={4}= ={5}= [initial] [rendered] split chunk (cache group: commons) (name: commons~pageA~pageB~pageC)
+Hash: [1m38bd528cee63650d45c8[39m[22m
+Version: webpack [1m4.39.2[39m[22m
+Time: [1m1678[39m[22mms
+                       [1mAsset[39m[22m       [1mSize[39m[22m  [1mChunks[39m[22m  [1m[39m[22m           [1m[39m[22m[1mChunk Names[39m[22m
+[1m[32mcommons~pageA~pageB~pageC.js[39m[22m   96 bytes       [1m0[39m[22m  [1m[32m[emitted][39m[22m  commons~pageA~pageB~pageC
+      [1m[32mcommons~pageB~pageC.js[39m[22m   97 bytes       [1m1[39m[22m  [1m[32m[emitted][39m[22m  commons~pageB~pageC
+                    [1m[32mpageA.js[39m[22m   1.56 KiB       [1m3[39m[22m  [1m[32m[emitted][39m[22m  pageA
+                    [1m[32mpageB.js[39m[22m   1.53 KiB       [1m4[39m[22m  [1m[32m[emitted][39m[22m  pageB
+                    [1m[32mpageC.js[39m[22m   1.52 KiB       [1m5[39m[22m  [1m[32m[emitted][39m[22m  pageC
+                   [1m[32mvendor.js[39m[22m  134 bytes       [1m2[39m[22m  [1m[32m[emitted][39m[22m  vendor
+Entrypoint [1mpageA[39m[22m = [1m[32mvendor.js[39m[22m [1m[32mcommons~pageA~pageB~pageC.js[39m[22m [1m[32mpageA.js[39m[22m
+Entrypoint [1mpageB[39m[22m = [1m[32mvendor.js[39m[22m [1m[32mcommons~pageA~pageB~pageC.js[39m[22m [1m[32mcommons~pageB~pageC.js[39m[22m [1m[32mpageB.js[39m[22m
+Entrypoint [1mpageC[39m[22m = [1m[32mcommons~pageA~pageB~pageC.js[39m[22m [1m[32mcommons~pageB~pageC.js[39m[22m [1m[32mpageC.js[39m[22m
+chunk    {[1m[33m0[39m[22m} [1m[32mcommons~pageA~pageB~pageC.js[39m[22m (commons~pageA~pageB~pageC) 28 bytes ={[1m[33m1[39m[22m}= ={[1m[33m2[39m[22m}= ={[1m[33m3[39m[22m}= ={[1m[33m4[39m[22m}= ={[1m[33m5[39m[22m}=[1m[33m [initial][39m[22m[1m[32m [rendered][39m[22m[1m[33m split chunk (cache group: commons) (name: commons~pageA~pageB~pageC)[39m[22m
     > ./pageA pageA
     > ./pageB pageB
     > ./pageC pageC
- [0] ./utility2.js 28 bytes {0} [built]
-     cjs require ./utility2 [2] ./pageA.js 3:15-36
-     cjs require ./utility2 [5] ./pageB.js 2:15-36
-     cjs require ./utility2 [7] ./pageC.js 1:15-36
-chunk    {1} commons~pageB~pageC.js (commons~pageB~pageC) 28 bytes ={0}= ={2}= ={4}= ={5}= [initial] [rendered] split chunk (cache group: commons) (name: commons~pageB~pageC)
+ [0] [1m./utility2.js[39m[22m 28 bytes {[1m[33m0[39m[22m}[1m[32m [built][39m[22m
+     cjs require [1m[36m./utility2[39m[22m [2] [1m[35m./pageA.js[39m[22m 3:15-36
+     cjs require [1m[36m./utility2[39m[22m [5] [1m[35m./pageB.js[39m[22m 2:15-36
+     cjs require [1m[36m./utility2[39m[22m [7] [1m[35m./pageC.js[39m[22m 1:15-36
+chunk    {[1m[33m1[39m[22m} [1m[32mcommons~pageB~pageC.js[39m[22m (commons~pageB~pageC) 28 bytes ={[1m[33m0[39m[22m}= ={[1m[33m2[39m[22m}= ={[1m[33m4[39m[22m}= ={[1m[33m5[39m[22m}=[1m[33m [initial][39m[22m[1m[32m [rendered][39m[22m[1m[33m split chunk (cache group: commons) (name: commons~pageB~pageC)[39m[22m
     > ./pageB pageB
     > ./pageC pageC
- [1] ./utility3.js 28 bytes {1} [built]
-     cjs require ./utility3 [5] ./pageB.js 3:15-36
-     cjs require ./utility3 [7] ./pageC.js 2:15-36
-chunk    {2} vendor.js (vendor) 54 bytes ={0}= ={1}= ={3}= ={4}= [initial] [rendered] split chunk (cache group: vendor) (name: vendor)
+ [1] [1m./utility3.js[39m[22m 28 bytes {[1m[33m1[39m[22m}[1m[32m [built][39m[22m
+     cjs require [1m[36m./utility3[39m[22m [5] [1m[35m./pageB.js[39m[22m 3:15-36
+     cjs require [1m[36m./utility3[39m[22m [7] [1m[35m./pageC.js[39m[22m 2:15-36
+chunk    {[1m[33m2[39m[22m} [1m[32mvendor.js[39m[22m (vendor) 54 bytes ={[1m[33m0[39m[22m}= ={[1m[33m1[39m[22m}= ={[1m[33m3[39m[22m}= ={[1m[33m4[39m[22m}=[1m[33m [initial][39m[22m[1m[32m [rendered][39m[22m[1m[33m split chunk (cache group: vendor) (name: vendor)[39m[22m
     > ./pageA pageA
     > ./pageB pageB
     2 modules
-chunk    {3} pageA.js (pageA) 165 bytes ={0}= ={2}= [entry] [rendered]
+chunk    {[1m[33m3[39m[22m} [1m[32mpageA.js[39m[22m (pageA) 170 bytes ={[1m[33m0[39m[22m}= ={[1m[33m2[39m[22m}=[1m[33m [entry][39m[22m[1m[32m [rendered][39m[22m
     > ./pageA pageA
- [2] ./pageA.js 137 bytes {3} [built]
-     single entry ./pageA  pageA
- [4] ./utility1.js 28 bytes {3} [built]
-     cjs require ./utility1 [2] ./pageA.js 2:15-36
-chunk    {4} pageB.js (pageB) 137 bytes ={0}= ={1}= ={2}= [entry] [rendered]
+ [2] [1m./pageA.js[39m[22m 142 bytes {[1m[33m3[39m[22m}[1m[32m [built][39m[22m
+     single entry [1m[36m./pageA[39m[22m  pageA
+ [4] [1m./utility1.js[39m[22m 28 bytes {[1m[33m3[39m[22m}[1m[32m [built][39m[22m
+     cjs require [1m[36m./utility1[39m[22m [2] [1m[35m./pageA.js[39m[22m 2:15-36
+chunk    {[1m[33m4[39m[22m} [1m[32mpageB.js[39m[22m (pageB) 142 bytes ={[1m[33m0[39m[22m}= ={[1m[33m1[39m[22m}= ={[1m[33m2[39m[22m}=[1m[33m [entry][39m[22m[1m[32m [rendered][39m[22m
     > ./pageB pageB
- [5] ./pageB.js 137 bytes {4} [built]
-     single entry ./pageB  pageB
-chunk    {5} pageC.js (pageC) 102 bytes ={0}= ={1}= [entry] [rendered]
+ [5] [1m./pageB.js[39m[22m 142 bytes {[1m[33m4[39m[22m}[1m[32m [built][39m[22m
+     single entry [1m[36m./pageB[39m[22m  pageB
+chunk    {[1m[33m5[39m[22m} [1m[32mpageC.js[39m[22m (pageC) 105 bytes ={[1m[33m0[39m[22m}= ={[1m[33m1[39m[22m}=[1m[33m [entry][39m[22m[1m[32m [rendered][39m[22m
     > ./pageC pageC
- [7] ./pageC.js 102 bytes {5} [built]
-     single entry ./pageC  pageC
+ [7] [1m./pageC.js[39m[22m 105 bytes {[1m[33m5[39m[22m}[1m[32m [built][39m[22m
+     single entry [1m[36m./pageC[39m[22m  pageC
 ```

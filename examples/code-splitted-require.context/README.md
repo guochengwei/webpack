@@ -335,55 +335,57 @@ module.exports = function() {
 ## Unoptimized
 
 ```
-Hash: 0a1b2c3d4e5f6a7b8c9d
-Version: webpack 4.39.0
-      Asset      Size  Chunks             Chunk Names
-1.output.js  1.81 KiB       1  [emitted]  
-  output.js  8.57 KiB       0  [emitted]  main
-Entrypoint main = output.js
-chunk    {0} output.js (main) 266 bytes >{1}< [entry] [rendered]
+Hash: [1me8eb40167ab921faa926[39m[22m
+Version: webpack [1m4.39.2[39m[22m
+Time: [1m92[39m[22mms
+      [1mAsset[39m[22m      [1mSize[39m[22m  [1mChunks[39m[22m  [1m[39m[22m           [1m[39m[22m[1mChunk Names[39m[22m
+[1m[32m1.output.js[39m[22m  1.82 KiB       [1m1[39m[22m  [1m[32m[emitted][39m[22m  
+  [1m[32moutput.js[39m[22m  8.58 KiB       [1m0[39m[22m  [1m[32m[emitted][39m[22m  main
+Entrypoint [1mmain[39m[22m = [1m[32moutput.js[39m[22m
+chunk    {[1m[33m0[39m[22m} [1m[32moutput.js[39m[22m (main) 276 bytes >{[1m[33m1[39m[22m}<[1m[33m [entry][39m[22m[1m[32m [rendered][39m[22m
     > ./example.js main
- [0] ./example.js 266 bytes {0} [built]
-     single entry ./example.js  main
-chunk    {1} 1.output.js 457 bytes <{0}> [rendered]
-    > [0] ./example.js 2:1-4:3
- [1] ../require.context/templates sync ^\.\/.*$ 217 bytes {1} [built]
-     cjs require context ../require.context/templates [0] ./example.js 3:11-64
- [2] ../require.context/templates/a.js 80 bytes {1} [optional] [built]
-     context element ./a [1] ../require.context/templates sync ^\.\/.*$ ./a
-     context element ./a.js [1] ../require.context/templates sync ^\.\/.*$ ./a.js
- [3] ../require.context/templates/b.js 80 bytes {1} [optional] [built]
-     context element ./b [1] ../require.context/templates sync ^\.\/.*$ ./b
-     context element ./b.js [1] ../require.context/templates sync ^\.\/.*$ ./b.js
- [4] ../require.context/templates/c.js 80 bytes {1} [optional] [built]
-     context element ./c [1] ../require.context/templates sync ^\.\/.*$ ./c
-     context element ./c.js [1] ../require.context/templates sync ^\.\/.*$ ./c.js
+ [0] [1m./example.js[39m[22m 276 bytes {[1m[33m0[39m[22m}[1m[32m [built][39m[22m
+     single entry [1m[36m./example.js[39m[22m  main
+chunk    {[1m[33m1[39m[22m} [1m[32m1.output.js[39m[22m 463 bytes <{[1m[33m0[39m[22m}>[1m[32m [rendered][39m[22m
+    > [0] [1m./example.js[39m[22m 2:1-4:3
+ [1] [1m../require.context/templates sync ^\.\/.*$[39m[22m 217 bytes {[1m[33m1[39m[22m}[1m[32m [built][39m[22m
+     cjs require context [1m[36m../require.context/templates[39m[22m [0] [1m[35m./example.js[39m[22m 3:11-64
+ [2] [1m../require.context/templates/a.js[39m[22m 82 bytes {[1m[33m1[39m[22m}[1m[33m [optional][39m[22m[1m[32m [built][39m[22m
+     context element [1m[36m./a[39m[22m [1] [1m[35m../require.context/templates sync ^\.\/.*$[39m[22m ./a
+     context element [1m[36m./a.js[39m[22m [1] [1m[35m../require.context/templates sync ^\.\/.*$[39m[22m ./a.js
+ [3] [1m../require.context/templates/b.js[39m[22m 82 bytes {[1m[33m1[39m[22m}[1m[33m [optional][39m[22m[1m[32m [built][39m[22m
+     context element [1m[36m./b[39m[22m [1] [1m[35m../require.context/templates sync ^\.\/.*$[39m[22m ./b
+     context element [1m[36m./b.js[39m[22m [1] [1m[35m../require.context/templates sync ^\.\/.*$[39m[22m ./b.js
+ [4] [1m../require.context/templates/c.js[39m[22m 82 bytes {[1m[33m1[39m[22m}[1m[33m [optional][39m[22m[1m[32m [built][39m[22m
+     context element [1m[36m./c[39m[22m [1] [1m[35m../require.context/templates sync ^\.\/.*$[39m[22m ./c
+     context element [1m[36m./c.js[39m[22m [1] [1m[35m../require.context/templates sync ^\.\/.*$[39m[22m ./c.js
 ```
 
 ## Production mode
 
 ```
-Hash: 0a1b2c3d4e5f6a7b8c9d
-Version: webpack 4.39.0
-      Asset       Size  Chunks             Chunk Names
-1.output.js  621 bytes       1  [emitted]  
-  output.js   2.18 KiB       0  [emitted]  main
-Entrypoint main = output.js
-chunk    {0} output.js (main) 266 bytes >{1}< [entry] [rendered]
+Hash: [1md256ea1e033cd114728a[39m[22m
+Version: webpack [1m4.39.2[39m[22m
+Time: [1m123[39m[22mms
+      [1mAsset[39m[22m       [1mSize[39m[22m  [1mChunks[39m[22m  [1m[39m[22m           [1m[39m[22m[1mChunk Names[39m[22m
+[1m[32m1.output.js[39m[22m  621 bytes       [1m1[39m[22m  [1m[32m[emitted][39m[22m  
+  [1m[32moutput.js[39m[22m   2.18 KiB       [1m0[39m[22m  [1m[32m[emitted][39m[22m  main
+Entrypoint [1mmain[39m[22m = [1m[32moutput.js[39m[22m
+chunk    {[1m[33m0[39m[22m} [1m[32moutput.js[39m[22m (main) 276 bytes >{[1m[33m1[39m[22m}<[1m[33m [entry][39m[22m[1m[32m [rendered][39m[22m
     > ./example.js main
- [0] ./example.js 266 bytes {0} [built]
-     single entry ./example.js  main
-chunk    {1} 1.output.js 457 bytes <{0}> [rendered]
-    > [0] ./example.js 2:1-4:3
- [1] ../require.context/templates sync ^\.\/.*$ 217 bytes {1} [built]
-     cjs require context ../require.context/templates [0] ./example.js 3:11-64
- [2] ../require.context/templates/a.js 80 bytes {1} [optional] [built]
-     context element ./a [1] ../require.context/templates sync ^\.\/.*$ ./a
-     context element ./a.js [1] ../require.context/templates sync ^\.\/.*$ ./a.js
- [3] ../require.context/templates/b.js 80 bytes {1} [optional] [built]
-     context element ./b [1] ../require.context/templates sync ^\.\/.*$ ./b
-     context element ./b.js [1] ../require.context/templates sync ^\.\/.*$ ./b.js
- [4] ../require.context/templates/c.js 80 bytes {1} [optional] [built]
-     context element ./c [1] ../require.context/templates sync ^\.\/.*$ ./c
-     context element ./c.js [1] ../require.context/templates sync ^\.\/.*$ ./c.js
+ [0] [1m./example.js[39m[22m 276 bytes {[1m[33m0[39m[22m}[1m[32m [built][39m[22m
+     single entry [1m[36m./example.js[39m[22m  main
+chunk    {[1m[33m1[39m[22m} [1m[32m1.output.js[39m[22m 463 bytes <{[1m[33m0[39m[22m}>[1m[32m [rendered][39m[22m
+    > [0] [1m./example.js[39m[22m 2:1-4:3
+ [1] [1m../require.context/templates sync ^\.\/.*$[39m[22m 217 bytes {[1m[33m1[39m[22m}[1m[32m [built][39m[22m
+     cjs require context [1m[36m../require.context/templates[39m[22m [0] [1m[35m./example.js[39m[22m 3:11-64
+ [2] [1m../require.context/templates/a.js[39m[22m 82 bytes {[1m[33m1[39m[22m}[1m[33m [optional][39m[22m[1m[32m [built][39m[22m
+     context element [1m[36m./a[39m[22m [1] [1m[35m../require.context/templates sync ^\.\/.*$[39m[22m ./a
+     context element [1m[36m./a.js[39m[22m [1] [1m[35m../require.context/templates sync ^\.\/.*$[39m[22m ./a.js
+ [3] [1m../require.context/templates/b.js[39m[22m 82 bytes {[1m[33m1[39m[22m}[1m[33m [optional][39m[22m[1m[32m [built][39m[22m
+     context element [1m[36m./b[39m[22m [1] [1m[35m../require.context/templates sync ^\.\/.*$[39m[22m ./b
+     context element [1m[36m./b.js[39m[22m [1] [1m[35m../require.context/templates sync ^\.\/.*$[39m[22m ./b.js
+ [4] [1m../require.context/templates/c.js[39m[22m 82 bytes {[1m[33m1[39m[22m}[1m[33m [optional][39m[22m[1m[32m [built][39m[22m
+     context element [1m[36m./c[39m[22m [1] [1m[35m../require.context/templates sync ^\.\/.*$[39m[22m ./c
+     context element [1m[36m./c.js[39m[22m [1] [1m[35m../require.context/templates sync ^\.\/.*$[39m[22m ./c.js
 ```

@@ -350,12 +350,12 @@ module.exports = "d";
 
 ```
 Hash: 0a1b2c3d4e5f6a7b8c9d
-Version: webpack 4.39.0
+Version: webpack 4.39.2
       Asset       Size  Chunks             Chunk Names
 0.output.js  405 bytes       0  [emitted]  
 2.output.js  241 bytes       2  [emitted]  
 3.output.js  241 bytes       3  [emitted]  
-  output.js   8.76 KiB       1  [emitted]  main
+  output.js   8.77 KiB       1  [emitted]  main
 Entrypoint main = output.js
 chunk    {0} 0.output.js 42 bytes <{1}> ={2}= ={3}= [rendered] split chunk (cache group: default)
     > ./a ./b ./c [2] ./example.js 2:0-30
@@ -366,9 +366,9 @@ chunk    {0} 0.output.js 42 bytes <{1}> ={2}= ={3}= [rendered] split chunk (cach
  [1] ./b.js 21 bytes {0} [built]
      amd require ./b [2] ./example.js 2:0-30
      cjs require ./b [2] ./example.js 6:1-15
-chunk    {1} output.js (main) 164 bytes >{0}< >{2}< >{3}< [entry] [rendered]
+chunk    {1} output.js (main) 172 bytes >{0}< >{2}< >{3}< [entry] [rendered]
     > ./example.js main
- [2] ./example.js 164 bytes {1} [built]
+ [2] ./example.js 172 bytes {1} [built]
      single entry ./example.js  main
 chunk    {2} 2.output.js 21 bytes <{1}> ={0}= [rendered]
     > ./a ./b ./c [2] ./example.js 2:0-30
@@ -384,7 +384,7 @@ chunk    {3} 3.output.js 21 bytes <{1}> ={0}= [rendered]
 
 ```
 Hash: 0a1b2c3d4e5f6a7b8c9d
-Version: webpack 4.39.0
+Version: webpack 4.39.2
       Asset       Size  Chunks             Chunk Names
 0.output.js  118 bytes       0  [emitted]  
 2.output.js   91 bytes       2  [emitted]  
@@ -400,9 +400,9 @@ chunk    {0} 0.output.js 42 bytes <{1}> ={2}= ={3}= [rendered] split chunk (cach
  [1] ./b.js 21 bytes {0} [built]
      amd require ./b [2] ./example.js 2:0-30
      cjs require ./b [2] ./example.js 6:1-15
-chunk    {1} output.js (main) 164 bytes >{0}< >{2}< >{3}< [entry] [rendered]
+chunk    {1} output.js (main) 172 bytes >{0}< >{2}< >{3}< [entry] [rendered]
     > ./example.js main
- [2] ./example.js 164 bytes {1} [built]
+ [2] ./example.js 172 bytes {1} [built]
      single entry ./example.js  main
 chunk    {2} 2.output.js 21 bytes <{1}> ={0}= [rendered]
     > ./a ./b ./c [2] ./example.js 2:0-30

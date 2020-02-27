@@ -329,63 +329,65 @@ module.exports = webpackAsyncContext;
 ## Unoptimized
 
 ```
-Hash: 0a1b2c3d4e5f6a7b8c9d
-Version: webpack 4.39.0
-      Asset       Size  Chunks             Chunk Names
-0.output.js  275 bytes       0  [emitted]  
-1.output.js  284 bytes       1  [emitted]  
-3.output.js  270 bytes       3  [emitted]  
-  output.js   9.94 KiB       2  [emitted]  main
-Entrypoint main = output.js
-chunk    {0} 0.output.js 13 bytes <{2}> [rendered]
-    > ./1 [4] ./node_modules/c lazy ^\.\/.*$ namespace object ./1
-    > ./1.js [4] ./node_modules/c lazy ^\.\/.*$ namespace object ./1.js
+Hash: [1mcb0d21407e228722ad84[39m[22m
+Version: webpack [1m4.39.2[39m[22m
+Time: [1m343[39m[22mms
+      [1mAsset[39m[22m       [1mSize[39m[22m  [1mChunks[39m[22m  [1m[39m[22m           [1m[39m[22m[1mChunk Names[39m[22m
+[1m[32m0.output.js[39m[22m  275 bytes       [1m0[39m[22m  [1m[32m[emitted][39m[22m  
+[1m[32m1.output.js[39m[22m  284 bytes       [1m1[39m[22m  [1m[32m[emitted][39m[22m  
+[1m[32m3.output.js[39m[22m  270 bytes       [1m3[39m[22m  [1m[32m[emitted][39m[22m  
+  [1m[32moutput.js[39m[22m   9.96 KiB       [1m2[39m[22m  [1m[32m[emitted][39m[22m  main
+Entrypoint [1mmain[39m[22m = [1m[32moutput.js[39m[22m
+chunk    {[1m[33m0[39m[22m} [1m[32m0.output.js[39m[22m 13 bytes <{[1m[33m2[39m[22m}>[1m[32m [rendered][39m[22m
+    > ./1 [4] [1m./node_modules/c lazy ^\.\/.*$ namespace object[39m[22m ./1
+    > ./1.js [4] [1m./node_modules/c lazy ^\.\/.*$ namespace object[39m[22m ./1.js
     1 module
-chunk    {1} 1.output.js 13 bytes <{2}> [rendered]
-    > ./2 [4] ./node_modules/c lazy ^\.\/.*$ namespace object ./2
-    > ./2.js [4] ./node_modules/c lazy ^\.\/.*$ namespace object ./2.js
+chunk    {[1m[33m1[39m[22m} [1m[32m1.output.js[39m[22m 13 bytes <{[1m[33m2[39m[22m}>[1m[32m [rendered][39m[22m
+    > ./2 [4] [1m./node_modules/c lazy ^\.\/.*$ namespace object[39m[22m ./2
+    > ./2.js [4] [1m./node_modules/c lazy ^\.\/.*$ namespace object[39m[22m ./2.js
     1 module
-chunk    {2} output.js (main) 414 bytes >{0}< >{1}< >{3}< [entry] [rendered]
+chunk    {[1m[33m2[39m[22m} [1m[32moutput.js[39m[22m (main) 427 bytes >{[1m[33m0[39m[22m}< >{[1m[33m1[39m[22m}< >{[1m[33m3[39m[22m}<[1m[33m [entry][39m[22m[1m[32m [rendered][39m[22m
     > ./example.js main
- [2] ./example.js 243 bytes {2} [built]
-     [no exports]
-     single entry ./example.js  main
- [4] ./node_modules/c lazy ^\.\/.*$ namespace object 160 bytes {2} [built]
-     import() context lazy c [2] ./example.js 8:8-27
+ [2] [1m./example.js[39m[22m 256 bytes {[1m[33m2[39m[22m}[1m[32m [built][39m[22m
+     [1m[36m[no exports][39m[22m
+     single entry [1m[36m./example.js[39m[22m  main
+ [4] [1m./node_modules/c lazy ^\.\/.*$ namespace object[39m[22m 160 bytes {[1m[33m2[39m[22m}[1m[32m [built][39m[22m
+     import() context lazy [1m[36mc[39m[22m [2] [1m[35m./example.js[39m[22m 8:8-27
      + 1 hidden module
-chunk    {3} 3.output.js 11 bytes <{2}> [rendered]
-    > b [2] ./example.js 3:0-11
+chunk    {[1m[33m3[39m[22m} [1m[32m3.output.js[39m[22m 11 bytes <{[1m[33m2[39m[22m}>[1m[32m [rendered][39m[22m
+    > b [2] [1m./example.js[39m[22m 3:0-11
     1 module
 ```
 
 ## Production mode
 
 ```
-Hash: 0a1b2c3d4e5f6a7b8c9d
-Version: webpack 4.39.0
-      Asset      Size  Chunks             Chunk Names
-0.output.js  76 bytes       0  [emitted]  
-1.output.js  77 bytes       1  [emitted]  
-3.output.js  78 bytes       3  [emitted]  
-  output.js  2.61 KiB       2  [emitted]  main
-Entrypoint main = output.js
-chunk    {0} 0.output.js 13 bytes <{2}> [rendered]
-    > ./1 [4] ./node_modules/c lazy ^\.\/.*$ namespace object ./1
-    > ./1.js [4] ./node_modules/c lazy ^\.\/.*$ namespace object ./1.js
+Hash: [1m00ed92b331be2fbc1b57[39m[22m
+Version: webpack [1m4.39.2[39m[22m
+Time: [1m1257[39m[22mms
+      [1mAsset[39m[22m      [1mSize[39m[22m  [1mChunks[39m[22m  [1m[39m[22m           [1m[39m[22m[1mChunk Names[39m[22m
+[1m[32m0.output.js[39m[22m  76 bytes       [1m0[39m[22m  [1m[32m[emitted][39m[22m  
+[1m[32m1.output.js[39m[22m  77 bytes       [1m1[39m[22m  [1m[32m[emitted][39m[22m  
+[1m[32m3.output.js[39m[22m  78 bytes       [1m3[39m[22m  [1m[32m[emitted][39m[22m  
+  [1m[32moutput.js[39m[22m  2.61 KiB       [1m2[39m[22m  [1m[32m[emitted][39m[22m  main
+Entrypoint [1mmain[39m[22m = [1m[32moutput.js[39m[22m
+chunk    {[1m[33m0[39m[22m} [1m[32m0.output.js[39m[22m 13 bytes <{[1m[33m2[39m[22m}>[1m[32m [rendered][39m[22m
+    > ./1 [4] [1m./node_modules/c lazy ^\.\/.*$ namespace object[39m[22m ./1
+    > ./1.js [4] [1m./node_modules/c lazy ^\.\/.*$ namespace object[39m[22m ./1.js
     1 module
-chunk    {1} 1.output.js 13 bytes <{2}> [rendered]
-    > ./2 [4] ./node_modules/c lazy ^\.\/.*$ namespace object ./2
-    > ./2.js [4] ./node_modules/c lazy ^\.\/.*$ namespace object ./2.js
+chunk    {[1m[33m1[39m[22m} [1m[32m1.output.js[39m[22m 13 bytes <{[1m[33m2[39m[22m}>[1m[32m [rendered][39m[22m
+    > ./2 [4] [1m./node_modules/c lazy ^\.\/.*$ namespace object[39m[22m ./2
+    > ./2.js [4] [1m./node_modules/c lazy ^\.\/.*$ namespace object[39m[22m ./2.js
     1 module
-chunk    {2} output.js (main) 414 bytes >{0}< >{1}< >{3}< [entry] [rendered]
+chunk    {[1m[33m2[39m[22m} [1m[32moutput.js[39m[22m (main) 427 bytes >{[1m[33m0[39m[22m}< >{[1m[33m1[39m[22m}< >{[1m[33m3[39m[22m}<[1m[33m [entry][39m[22m[1m[32m [rendered][39m[22m
     > ./example.js main
- [2] ./example.js 243 bytes {2} [built]
-     [no exports]
-     single entry ./example.js  main
- [4] ./node_modules/c lazy ^\.\/.*$ namespace object 160 bytes {2} [built]
-     import() context lazy c [2] ./example.js 8:8-27
+ [2] [1m./example.js[39m[22m 256 bytes {[1m[33m2[39m[22m}[1m[32m [built][39m[22m
+     [1m[36m[no exports][39m[22m
+     single entry [1m[36m./example.js[39m[22m  main
+ [4] [1m./node_modules/c lazy ^\.\/.*$ namespace object[39m[22m 160 bytes {[1m[33m2[39m[22m}[1m[32m [built][39m[22m
+     import() context lazy [1m[36mc[39m[22m [2] [1m[35m./example.js[39m[22m 8:8-27
      + 1 hidden module
-chunk    {3} 3.output.js 11 bytes <{2}> [rendered]
-    > b [2] ./example.js 3:0-11
+chunk    {[1m[33m3[39m[22m} [1m[32m3.output.js[39m[22m 11 bytes <{[1m[33m2[39m[22m}>[1m[32m [rendered][39m[22m
+    > b [2] [1m./example.js[39m[22m 3:0-11
     1 module
 ```

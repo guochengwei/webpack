@@ -5,43 +5,64 @@ The previously built vendor dll is used. The DllReferencePlugin reads the conten
 # webpack.config.js
 
 ```javascript
-var path = require("path");
-var webpack = require("../../../");
+var path = require('path')
+var webpack = require('../../../')
 
 module.exports = {
 	// mode: "development" || "production",
 	context: __dirname,
-	entry: "./example-app",
+	entry: './example-app',
 	output: {
-		filename: "app.js",
-		path: path.resolve(__dirname, "dist")
+		filename: 'app.js',
+		chunkFilename: '[name].js',
+		path: path.resolve(__dirname, 'dist')
 	},
 	plugins: [
 		new webpack.DllReferencePlugin({
-			context: ".",
-			manifest: require("../0-vendor/dist/vendor-manifest.json") // eslint-disable-line
+			context: process.cwd(),
+			manifest: require('../0-vendor/echarts/echarts-manifest.json'), // eslint-disable-line,
+			asyncChunkPath: '../../0-vendor/echarts/'
 		})
 	]
-};
+}
 ```
 
 # example-app.js
 
 ```javascript
-import { square } from "example-vendor";
+/*import { square } from "example-vendor";
+console.log(square(7));*/
 
-console.log(square(7));
-console.log(new square(7));
+setTimeout(() => {
+	import(/* webpackChunkName: "example-vendor" */ 'echarts.dll').then((square) => {
+	})
+
+/*	import(/!* webpackChunkName: "example-vendor" *!/ 'example-vendor2').then((square) => {
+	})*/
+}, 2000)
+// import { square } from "example-vendor";
+
+/*import(/!* webpackChunkName: "test1" *!/ './test1.js').then((log) => {
+})
+import(/!* webpackChunkName: "test1" *!/ './test1-2.js').then((log) => {
+})*/
+/*
+import(/!* webpackChunkName: "test2" *!/ './test2.js').then((log) => {
+})
+import(/!* webpackChunkName: "test2" *!/ './test2-1.js').then((log) => {
+})*/
 ```
 
 # example.html
 
 ```html
 <html>
-	<head></head>
+	<head>
+		<link href="../0-vendor/dist/vendor_350b0c06610fb1884d69.js" rel="prefetch">
+	</head>
 	<body>
-		<script src="../0-vendor/js/vendor.js" charset="utf-8"></script>
-		<script src="js/app.js" charset="utf-8"></script>
+<!--	<script src="../0-vendor/dist/vendor.js" charset="utf-8"></script>-->
+	<script src="dist/app.js" charset="utf-8"></script>
 	</body>
 </html>
 ```
@@ -52,8 +73,52 @@ console.log(new square(7));
 
 ```javascript
 /******/ (function(modules) { // webpackBootstrap
+/******/ 	// install a JSONP callback for chunk loading
+/******/ 	function webpackJsonpCallback(data) {
+/******/ 		var chunkIds = data[0];
+/******/ 		var moreModules = data[1];
+/******/
+/******/
+/******/ 		// add "moreModules" to the modules object,
+/******/ 		// then flag all "chunkIds" as loaded and fire callback
+/******/ 		var moduleId, chunkId, i = 0, resolves = [];
+/******/ 		for(;i < chunkIds.length; i++) {
+/******/ 			chunkId = chunkIds[i];
+/******/ 			if(Object.prototype.hasOwnProperty.call(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 				resolves.push(installedChunks[chunkId][0]);
+/******/ 			}
+/******/ 			installedChunks[chunkId] = 0;
+/******/ 		}
+/******/ 		for(moduleId in moreModules) {
+/******/ 			if(Object.prototype.hasOwnProperty.call(moreModules, moduleId)) {
+/******/ 				modules[moduleId] = moreModules[moduleId];
+/******/ 			}
+/******/ 		}
+/******/ 		if(parentJsonpFunction) parentJsonpFunction(data);
+/******/
+/******/ 		while(resolves.length) {
+/******/ 			resolves.shift()();
+/******/ 		}
+/******/
+/******/ 	};
+/******/
+/******/
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
+/******/
+/******/ 	// object to store loaded and loading chunks
+/******/ 	// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 	// Promise = chunk loading, 0 = chunk loaded
+/******/ 	var installedChunks = {
+/******/ 		0: 0
+/******/ 	};
+/******/
+/******/
+/******/
+/******/ 	// script path function
+/******/ 	function jsonpScriptSrc(chunkId) {
+/******/ 		return __webpack_require__.p + "" + ({"echarts":"vendors~../../0-vendor/echarts/echarts"}[chunkId]||chunkId) + ".js"
+/******/ 	}
 /******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
@@ -79,6 +144,67 @@ console.log(new square(7));
 /******/ 		return module.exports;
 /******/ 	}
 /******/
+/******/ 	// This file contains only the entry chunk.
+/******/ 	// The chunk loading function for additional chunks
+/******/ 	__webpack_require__.e = function requireEnsure(chunkId) {
+/******/ 		var promises = [];
+/******/
+/******/
+/******/ 		// JSONP chunk loading for javascript
+/******/
+/******/ 		var installedChunkData = installedChunks[chunkId];
+/******/ 		if(installedChunkData !== 0) { // 0 means "already installed".
+/******/
+/******/ 			// a Promise means "currently loading".
+/******/ 			if(installedChunkData) {
+/******/ 				promises.push(installedChunkData[2]);
+/******/ 			} else {
+/******/ 				// setup Promise in chunk cache
+/******/ 				var promise = new Promise(function(resolve, reject) {
+/******/ 					installedChunkData = installedChunks[chunkId] = [resolve, reject];
+/******/ 				});
+/******/ 				promises.push(installedChunkData[2] = promise);
+/******/
+/******/ 				// start chunk loading
+/******/ 				var script = document.createElement('script');
+/******/ 				var onScriptComplete;
+/******/
+/******/ 				script.charset = 'utf-8';
+/******/ 				script.timeout = 120;
+/******/ 				if (__webpack_require__.nc) {
+/******/ 					script.setAttribute("nonce", __webpack_require__.nc);
+/******/ 				}
+/******/ 				script.src = jsonpScriptSrc(chunkId);
+/******/
+/******/ 				// create error before stack unwound to get useful stacktrace later
+/******/ 				var error = new Error();
+/******/ 				onScriptComplete = function (event) {
+/******/ 					// avoid mem leaks in IE.
+/******/ 					script.onerror = script.onload = null;
+/******/ 					clearTimeout(timeout);
+/******/ 					var chunk = installedChunks[chunkId];
+/******/ 					if(chunk !== 0) {
+/******/ 						if(chunk) {
+/******/ 							var errorType = event && (event.type === 'load' ? 'missing' : event.type);
+/******/ 							var realSrc = event && event.target && event.target.src;
+/******/ 							error.message = 'Loading chunk ' + chunkId + ' failed.\n(' + errorType + ': ' + realSrc + ')';
+/******/ 							error.name = 'ChunkLoadError';
+/******/ 							error.type = errorType;
+/******/ 							error.request = realSrc;
+/******/ 							chunk[1](error);
+/******/ 						}
+/******/ 						installedChunks[chunkId] = undefined;
+/******/ 					}
+/******/ 				};
+/******/ 				var timeout = setTimeout(function(){
+/******/ 					onScriptComplete({ type: 'timeout', target: script });
+/******/ 				}, 120000);
+/******/ 				script.onerror = script.onload = onScriptComplete;
+/******/ 				document.head.appendChild(script);
+/******/ 			}
+/******/ 		}
+/******/ 		return Promise.all(promises);
+/******/ 	};
 /******/
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
@@ -132,6 +258,16 @@ console.log(new square(7));
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "dist/";
 /******/
+/******/ 	// on error function for async loading
+/******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
+/******/
+/******/ 	var jsonpArray = window["webpackJsonp"] = window["webpackJsonp"] || [];
+/******/ 	var oldJsonpFunction = jsonpArray.push.bind(jsonpArray);
+/******/ 	jsonpArray.push = webpackJsonpCallback;
+/******/ 	jsonpArray = jsonpArray.slice();
+/******/ 	for(var i = 0; i < jsonpArray.length; i++) webpackJsonpCallback(jsonpArray[i]);
+/******/ 	var parentJsonpFunction = oldJsonpFunction;
+/******/
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 0);
@@ -147,37 +283,31 @@ console.log(new square(7));
 /*!************************!*\
   !*** ./example-app.js ***!
   \************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var example_vendor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! example-vendor */ 1);
-
-
-console.log(Object(example_vendor__WEBPACK_IMPORTED_MODULE_0__["square"])(7));
-console.log(new example_vendor__WEBPACK_IMPORTED_MODULE_0__["square"](7));
-
-
-/***/ }),
-/* 1 */
-/*!******************************************************************************************************!*\
-  !*** delegated ../node_modules/example-vendor.js from dll-reference vendor_lib_a132d30959ef28c3f004 ***!
-  \******************************************************************************************************/
-/*! exports provided: square */
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference vendor_lib_a132d30959ef28c3f004 */ 2))(1);
+/*import { square } from "example-vendor";
+console.log(square(7));*/
 
-/***/ }),
-/* 2 */
-/*!**************************************************!*\
-  !*** external "vendor_lib_a132d30959ef28c3f004" ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+setTimeout(() => {
+	__webpack_require__.e(/*! import() | ../../0-vendor/echarts/echarts */ "echarts").then(__webpack_require__.t.bind(null, /*! echarts.dll */ 1, 7)).then((square) => {
+	})
 
-module.exports = vendor_lib_a132d30959ef28c3f004;
+/*	import(/!* webpackChunkName: "example-vendor" *!/ 'example-vendor2').then((square) => {
+	})*/
+}, 2000)
+// import { square } from "example-vendor";
+
+/*import(/!* webpackChunkName: "test1" *!/ './test1.js').then((log) => {
+})
+import(/!* webpackChunkName: "test1" *!/ './test1-2.js').then((log) => {
+})*/
+/*
+import(/!* webpackChunkName: "test2" *!/ './test2.js').then((log) => {
+})
+import(/!* webpackChunkName: "test2" *!/ './test2-1.js').then((log) => {
+})*/
+
 
 /***/ })
 /******/ ]);
@@ -188,45 +318,31 @@ module.exports = vendor_lib_a132d30959ef28c3f004;
 ## Unoptimized
 
 ```
-Hash: 0a1b2c3d4e5f6a7b8c9d
-Version: webpack 4.39.0
- Asset      Size  Chunks             Chunk Names
-app.js  4.86 KiB       0  [emitted]  main
-Entrypoint main = app.js
-chunk    {0} app.js (main) 178 bytes [entry] [rendered]
+Hash: [1me9b48ad47c2777c2b5d9[39m[22m
+Version: webpack [1m4.39.2[39m[22m
+Time: [1m6079[39m[22mms
+ [1mAsset[39m[22m      [1mSize[39m[22m  [1mChunks[39m[22m  [1m[39m[22m           [1m[39m[22m[1mChunk Names[39m[22m
+[1m[32mapp.js[39m[22m  9.02 KiB       [1m0[39m[22m  [1m[32m[emitted][39m[22m  main
+Entrypoint [1mmain[39m[22m = [1m[32mapp.js[39m[22m
+chunk    {[1m[33m0[39m[22m} [1m[32mapp.js[39m[22m (main) 658 bytes >{[1m[33mecharts[39m[22m}<[1m[33m [entry][39m[22m[1m[32m [rendered][39m[22m
     > ./example-app main
- [0] ./example-app.js 94 bytes {0} [built]
-     [no exports]
-     single entry ./example-app  main
- [1] delegated ../node_modules/example-vendor.js from dll-reference vendor_lib_a132d30959ef28c3f004 42 bytes {0} [built]
-     [exports: square]
-     harmony side effect evaluation example-vendor [0] ./example-app.js 1:0-40
-     harmony import specifier example-vendor [0] ./example-app.js 3:12-18
-     harmony import specifier example-vendor [0] ./example-app.js 4:16-22
- [2] external "vendor_lib_a132d30959ef28c3f004" 42 bytes {0} [built]
-     delegated source dll-reference vendor_lib_a132d30959ef28c3f004 [1] delegated ../node_modules/example-vendor.js from dll-reference vendor_lib_a132d30959ef28c3f004
+ [0] [1m./example-app.js[39m[22m 658 bytes {[1m[33m0[39m[22m}[1m[32m [built][39m[22m
+     single entry [1m[36m./example-app[39m[22m  main
 ```
 
 ## Production mode
 
 ```
-Hash: 0a1b2c3d4e5f6a7b8c9d
-Version: webpack 4.39.0
- Asset      Size  Chunks             Chunk Names
-app.js  1.09 KiB       0  [emitted]  main
-Entrypoint main = app.js
-chunk    {0} app.js (main) 178 bytes [entry] [rendered]
+Hash: [1m49fe749ab9ec1d42adbf[39m[22m
+Version: webpack [1m4.39.2[39m[22m
+Time: [1m25315[39m[22mms
+ [1mAsset[39m[22m      [1mSize[39m[22m  [1mChunks[39m[22m  [1m[39m[22m           [1m[39m[22m[1mChunk Names[39m[22m
+[1m[32mapp.js[39m[22m  2.15 KiB       [1m0[39m[22m  [1m[32m[emitted][39m[22m  main
+Entrypoint [1mmain[39m[22m = [1m[32mapp.js[39m[22m
+chunk    {[1m[33m0[39m[22m} [1m[32mapp.js[39m[22m (main) 658 bytes >{[1m[33mecharts[39m[22m}<[1m[33m [entry][39m[22m[1m[32m [rendered][39m[22m
     > ./example-app main
- [0] delegated ../node_modules/example-vendor.js from dll-reference vendor_lib_a132d30959ef28c3f004 42 bytes {0} [built]
-     [exports: square]
-     harmony side effect evaluation example-vendor [1] ./example-app.js 1:0-40
-     harmony import specifier example-vendor [1] ./example-app.js 3:12-18
-     harmony import specifier example-vendor [1] ./example-app.js 4:16-22
- [1] ./example-app.js 94 bytes {0} [built]
-     [no exports]
-     single entry ./example-app  main
- [2] external "vendor_lib_a132d30959ef28c3f004" 42 bytes {0} [built]
-     delegated source dll-reference vendor_lib_a132d30959ef28c3f004 [0] delegated ../node_modules/example-vendor.js from dll-reference vendor_lib_a132d30959ef28c3f004
+ [0] [1m./example-app.js[39m[22m 658 bytes {[1m[33m0[39m[22m}[1m[32m [built][39m[22m
+     single entry [1m[36m./example-app[39m[22m  main
 ```
 
 <!-- @TODO:

@@ -34,6 +34,7 @@ export type DllReferencePluginOptions =
 			 * The way how the export of the dll bundle is used
 			 */
 			type?: "require" | "object";
+			asyncChunkPath?: 'string';
 	  }
 	| {
 			/**
@@ -64,7 +65,8 @@ export type DllReferencePluginOptions =
 			 * The way how the export of the dll bundle is used
 			 */
 			type?: "require" | "object";
-	  };
+			asyncChunkPath?: 'string';
+};
 /**
  * The type how the dll is exposed (external type)
  */
@@ -87,6 +89,7 @@ export type DllReferencePluginOptionsSourceType =
  * An object containing content, name and type
  */
 export interface DllReferencePluginOptionsManifest {
+	asyncChunk?: boolean;
 	/**
 	 * The mappings from request to module info
 	 */

@@ -59,95 +59,97 @@ module.exports = {
 ## Unoptimized
 
 ```
-Hash: 0a1b2c3d4e5f6a7b8c9d
-Version: webpack 4.39.0
-          Asset       Size  Chunks             Chunk Names
-     0.chunk.js   5.96 KiB       0  [emitted]  
-     4.chunk.js  405 bytes       4  [emitted]  
-pageA.bundle.js    8.5 KiB       1  [emitted]  pageA
-pageB.bundle.js    8.5 KiB       2  [emitted]  pageB
-pageC.bundle.js    8.5 KiB       3  [emitted]  pageC
-Entrypoint pageA = pageA.bundle.js
-Entrypoint pageB = pageB.bundle.js
-Entrypoint pageC = pageC.bundle.js
-chunk    {0} 0.chunk.js 5.45 KiB <{1}> <{2}> [rendered]
-    > ./common [3] ./pageA.js 1:0-3:2
-    > ./common [4] ./pageB.js 1:0-3:2
- [0] ./a.js 21 bytes {0} {4} [built]
-     cjs require ./a [3] ./pageA.js 2:8-22
-     amd require ./a [5] ./pageC.js 1:0-3:2
- [1] ./b.js 21 bytes {0} {4} [built]
-     cjs require ./b [4] ./pageB.js 2:8-22
-     cjs require ./b [5] ./pageC.js 2:17-31
- [2] ./common.js 5.41 KiB {0} [built]
-     amd require ./common [3] ./pageA.js 1:0-3:2
-     amd require ./common [4] ./pageB.js 1:0-3:2
-chunk    {1} pageA.bundle.js (pageA) 69 bytes >{0}< [entry] [rendered]
+Hash: [1m7ece53f9a3ea7cbd67b3[39m[22m
+Version: webpack [1m4.39.2[39m[22m
+Time: [1m249[39m[22mms
+          [1mAsset[39m[22m       [1mSize[39m[22m  [1mChunks[39m[22m  [1m[39m[22m           [1m[39m[22m[1mChunk Names[39m[22m
+     [1m[32m0.chunk.js[39m[22m   5.98 KiB       [1m0[39m[22m  [1m[32m[emitted][39m[22m  
+     [1m[32m4.chunk.js[39m[22m  405 bytes       [1m4[39m[22m  [1m[32m[emitted][39m[22m  
+[1m[32mpageA.bundle.js[39m[22m    8.5 KiB       [1m1[39m[22m  [1m[32m[emitted][39m[22m  pageA
+[1m[32mpageB.bundle.js[39m[22m    8.5 KiB       [1m2[39m[22m  [1m[32m[emitted][39m[22m  pageB
+[1m[32mpageC.bundle.js[39m[22m    8.5 KiB       [1m3[39m[22m  [1m[32m[emitted][39m[22m  pageC
+Entrypoint [1mpageA[39m[22m = [1m[32mpageA.bundle.js[39m[22m
+Entrypoint [1mpageB[39m[22m = [1m[32mpageB.bundle.js[39m[22m
+Entrypoint [1mpageC[39m[22m = [1m[32mpageC.bundle.js[39m[22m
+chunk    {[1m[33m0[39m[22m} [1m[32m0.chunk.js[39m[22m 5.46 KiB <{[1m[33m1[39m[22m}> <{[1m[33m2[39m[22m}>[1m[32m [rendered][39m[22m
+    > ./common [3] [1m./pageA.js[39m[22m 1:0-3:2
+    > ./common [4] [1m./pageB.js[39m[22m 1:0-3:2
+ [0] [1m./a.js[39m[22m 21 bytes {[1m[33m0[39m[22m} {[1m[33m4[39m[22m}[1m[32m [built][39m[22m
+     cjs require [1m[36m./a[39m[22m [3] [1m[35m./pageA.js[39m[22m 2:8-22
+     amd require [1m[36m./a[39m[22m [5] [1m[35m./pageC.js[39m[22m 1:0-3:2
+ [1] [1m./b.js[39m[22m 21 bytes {[1m[33m0[39m[22m} {[1m[33m4[39m[22m}[1m[32m [built][39m[22m
+     cjs require [1m[36m./b[39m[22m [4] [1m[35m./pageB.js[39m[22m 2:8-22
+     cjs require [1m[36m./b[39m[22m [5] [1m[35m./pageC.js[39m[22m 2:17-31
+ [2] [1m./common.js[39m[22m 5.42 KiB {[1m[33m0[39m[22m}[1m[32m [built][39m[22m
+     amd require [1m[36m./common[39m[22m [3] [1m[35m./pageA.js[39m[22m 1:0-3:2
+     amd require [1m[36m./common[39m[22m [4] [1m[35m./pageB.js[39m[22m 1:0-3:2
+chunk    {[1m[33m1[39m[22m} [1m[32mpageA.bundle.js[39m[22m (pageA) 71 bytes >{[1m[33m0[39m[22m}<[1m[33m [entry][39m[22m[1m[32m [rendered][39m[22m
     > ./pageA pageA
- [3] ./pageA.js 69 bytes {1} [built]
-     single entry ./pageA  pageA
-chunk    {2} pageB.bundle.js (pageB) 69 bytes >{0}< [entry] [rendered]
+ [3] [1m./pageA.js[39m[22m 71 bytes {[1m[33m1[39m[22m}[1m[32m [built][39m[22m
+     single entry [1m[36m./pageA[39m[22m  pageA
+chunk    {[1m[33m2[39m[22m} [1m[32mpageB.bundle.js[39m[22m (pageB) 71 bytes >{[1m[33m0[39m[22m}<[1m[33m [entry][39m[22m[1m[32m [rendered][39m[22m
     > ./pageB pageB
- [4] ./pageB.js 69 bytes {2} [built]
-     single entry ./pageB  pageB
-chunk    {3} pageC.bundle.js (pageC) 68 bytes >{4}< [entry] [rendered]
+ [4] [1m./pageB.js[39m[22m 71 bytes {[1m[33m2[39m[22m}[1m[32m [built][39m[22m
+     single entry [1m[36m./pageB[39m[22m  pageB
+chunk    {[1m[33m3[39m[22m} [1m[32mpageC.bundle.js[39m[22m (pageC) 70 bytes >{[1m[33m4[39m[22m}<[1m[33m [entry][39m[22m[1m[32m [rendered][39m[22m
     > ./pageC pageC
- [5] ./pageC.js 68 bytes {3} [built]
-     single entry ./pageC  pageC
-chunk    {4} 4.chunk.js 42 bytes <{3}> [rendered]
-    > ./a [5] ./pageC.js 1:0-3:2
- [0] ./a.js 21 bytes {0} {4} [built]
-     cjs require ./a [3] ./pageA.js 2:8-22
-     amd require ./a [5] ./pageC.js 1:0-3:2
- [1] ./b.js 21 bytes {0} {4} [built]
-     cjs require ./b [4] ./pageB.js 2:8-22
-     cjs require ./b [5] ./pageC.js 2:17-31
+ [5] [1m./pageC.js[39m[22m 70 bytes {[1m[33m3[39m[22m}[1m[32m [built][39m[22m
+     single entry [1m[36m./pageC[39m[22m  pageC
+chunk    {[1m[33m4[39m[22m} [1m[32m4.chunk.js[39m[22m 42 bytes <{[1m[33m3[39m[22m}>[1m[32m [rendered][39m[22m
+    > ./a [5] [1m./pageC.js[39m[22m 1:0-3:2
+ [0] [1m./a.js[39m[22m 21 bytes {[1m[33m0[39m[22m} {[1m[33m4[39m[22m}[1m[32m [built][39m[22m
+     cjs require [1m[36m./a[39m[22m [3] [1m[35m./pageA.js[39m[22m 2:8-22
+     amd require [1m[36m./a[39m[22m [5] [1m[35m./pageC.js[39m[22m 1:0-3:2
+ [1] [1m./b.js[39m[22m 21 bytes {[1m[33m0[39m[22m} {[1m[33m4[39m[22m}[1m[32m [built][39m[22m
+     cjs require [1m[36m./b[39m[22m [4] [1m[35m./pageB.js[39m[22m 2:8-22
+     cjs require [1m[36m./b[39m[22m [5] [1m[35m./pageC.js[39m[22m 2:17-31
 ```
 
 ## Production mode
 
 ```
-Hash: 0a1b2c3d4e5f6a7b8c9d
-Version: webpack 4.39.0
-          Asset       Size  Chunks             Chunk Names
-     0.chunk.js  173 bytes    0, 4  [emitted]  
-     4.chunk.js  118 bytes       4  [emitted]  
-pageA.bundle.js   2.11 KiB       1  [emitted]  pageA
-pageB.bundle.js   2.11 KiB       2  [emitted]  pageB
-pageC.bundle.js   2.12 KiB       3  [emitted]  pageC
-Entrypoint pageA = pageA.bundle.js
-Entrypoint pageB = pageB.bundle.js
-Entrypoint pageC = pageC.bundle.js
-chunk    {0} 0.chunk.js 5.45 KiB <{1}> <{2}> [rendered]
-    > ./common [3] ./pageA.js 1:0-3:2
-    > ./common [4] ./pageB.js 1:0-3:2
- [0] ./a.js 21 bytes {0} {4} [built]
-     cjs require ./a [3] ./pageA.js 2:8-22
-     amd require ./a [5] ./pageC.js 1:0-3:2
- [1] ./b.js 21 bytes {0} {4} [built]
-     cjs require ./b [4] ./pageB.js 2:8-22
-     cjs require ./b [5] ./pageC.js 2:17-31
- [2] ./common.js 5.41 KiB {0} [built]
-     amd require ./common [3] ./pageA.js 1:0-3:2
-     amd require ./common [4] ./pageB.js 1:0-3:2
-chunk    {1} pageA.bundle.js (pageA) 69 bytes >{0}< [entry] [rendered]
+Hash: [1m655252a88c5284a5376d[39m[22m
+Version: webpack [1m4.39.2[39m[22m
+Time: [1m1152[39m[22mms
+          [1mAsset[39m[22m       [1mSize[39m[22m  [1mChunks[39m[22m  [1m[39m[22m           [1m[39m[22m[1mChunk Names[39m[22m
+     [1m[32m0.chunk.js[39m[22m  173 bytes    [1m0, 4[39m[22m  [1m[32m[emitted][39m[22m  
+     [1m[32m4.chunk.js[39m[22m  118 bytes       [1m4[39m[22m  [1m[32m[emitted][39m[22m  
+[1m[32mpageA.bundle.js[39m[22m   2.11 KiB       [1m1[39m[22m  [1m[32m[emitted][39m[22m  pageA
+[1m[32mpageB.bundle.js[39m[22m   2.11 KiB       [1m2[39m[22m  [1m[32m[emitted][39m[22m  pageB
+[1m[32mpageC.bundle.js[39m[22m   2.12 KiB       [1m3[39m[22m  [1m[32m[emitted][39m[22m  pageC
+Entrypoint [1mpageA[39m[22m = [1m[32mpageA.bundle.js[39m[22m
+Entrypoint [1mpageB[39m[22m = [1m[32mpageB.bundle.js[39m[22m
+Entrypoint [1mpageC[39m[22m = [1m[32mpageC.bundle.js[39m[22m
+chunk    {[1m[33m0[39m[22m} [1m[32m0.chunk.js[39m[22m 5.46 KiB <{[1m[33m1[39m[22m}> <{[1m[33m2[39m[22m}>[1m[32m [rendered][39m[22m
+    > ./common [3] [1m./pageA.js[39m[22m 1:0-3:2
+    > ./common [4] [1m./pageB.js[39m[22m 1:0-3:2
+ [0] [1m./a.js[39m[22m 21 bytes {[1m[33m0[39m[22m} {[1m[33m4[39m[22m}[1m[32m [built][39m[22m
+     cjs require [1m[36m./a[39m[22m [3] [1m[35m./pageA.js[39m[22m 2:8-22
+     amd require [1m[36m./a[39m[22m [5] [1m[35m./pageC.js[39m[22m 1:0-3:2
+ [1] [1m./b.js[39m[22m 21 bytes {[1m[33m0[39m[22m} {[1m[33m4[39m[22m}[1m[32m [built][39m[22m
+     cjs require [1m[36m./b[39m[22m [4] [1m[35m./pageB.js[39m[22m 2:8-22
+     cjs require [1m[36m./b[39m[22m [5] [1m[35m./pageC.js[39m[22m 2:17-31
+ [2] [1m./common.js[39m[22m 5.42 KiB {[1m[33m0[39m[22m}[1m[32m [built][39m[22m
+     amd require [1m[36m./common[39m[22m [3] [1m[35m./pageA.js[39m[22m 1:0-3:2
+     amd require [1m[36m./common[39m[22m [4] [1m[35m./pageB.js[39m[22m 1:0-3:2
+chunk    {[1m[33m1[39m[22m} [1m[32mpageA.bundle.js[39m[22m (pageA) 71 bytes >{[1m[33m0[39m[22m}<[1m[33m [entry][39m[22m[1m[32m [rendered][39m[22m
     > ./pageA pageA
- [3] ./pageA.js 69 bytes {1} [built]
-     single entry ./pageA  pageA
-chunk    {2} pageB.bundle.js (pageB) 69 bytes >{0}< [entry] [rendered]
+ [3] [1m./pageA.js[39m[22m 71 bytes {[1m[33m1[39m[22m}[1m[32m [built][39m[22m
+     single entry [1m[36m./pageA[39m[22m  pageA
+chunk    {[1m[33m2[39m[22m} [1m[32mpageB.bundle.js[39m[22m (pageB) 71 bytes >{[1m[33m0[39m[22m}<[1m[33m [entry][39m[22m[1m[32m [rendered][39m[22m
     > ./pageB pageB
- [4] ./pageB.js 69 bytes {2} [built]
-     single entry ./pageB  pageB
-chunk    {3} pageC.bundle.js (pageC) 68 bytes >{4}< [entry] [rendered]
+ [4] [1m./pageB.js[39m[22m 71 bytes {[1m[33m2[39m[22m}[1m[32m [built][39m[22m
+     single entry [1m[36m./pageB[39m[22m  pageB
+chunk    {[1m[33m3[39m[22m} [1m[32mpageC.bundle.js[39m[22m (pageC) 70 bytes >{[1m[33m4[39m[22m}<[1m[33m [entry][39m[22m[1m[32m [rendered][39m[22m
     > ./pageC pageC
- [5] ./pageC.js 68 bytes {3} [built]
-     single entry ./pageC  pageC
-chunk    {4} 4.chunk.js 42 bytes <{3}> [rendered]
-    > ./a [5] ./pageC.js 1:0-3:2
- [0] ./a.js 21 bytes {0} {4} [built]
-     cjs require ./a [3] ./pageA.js 2:8-22
-     amd require ./a [5] ./pageC.js 1:0-3:2
- [1] ./b.js 21 bytes {0} {4} [built]
-     cjs require ./b [4] ./pageB.js 2:8-22
-     cjs require ./b [5] ./pageC.js 2:17-31
+ [5] [1m./pageC.js[39m[22m 70 bytes {[1m[33m3[39m[22m}[1m[32m [built][39m[22m
+     single entry [1m[36m./pageC[39m[22m  pageC
+chunk    {[1m[33m4[39m[22m} [1m[32m4.chunk.js[39m[22m 42 bytes <{[1m[33m3[39m[22m}>[1m[32m [rendered][39m[22m
+    > ./a [5] [1m./pageC.js[39m[22m 1:0-3:2
+ [0] [1m./a.js[39m[22m 21 bytes {[1m[33m0[39m[22m} {[1m[33m4[39m[22m}[1m[32m [built][39m[22m
+     cjs require [1m[36m./a[39m[22m [3] [1m[35m./pageA.js[39m[22m 2:8-22
+     amd require [1m[36m./a[39m[22m [5] [1m[35m./pageC.js[39m[22m 1:0-3:2
+ [1] [1m./b.js[39m[22m 21 bytes {[1m[33m0[39m[22m} {[1m[33m4[39m[22m}[1m[32m [built][39m[22m
+     cjs require [1m[36m./b[39m[22m [4] [1m[35m./pageB.js[39m[22m 2:8-22
+     cjs require [1m[36m./b[39m[22m [5] [1m[35m./pageC.js[39m[22m 2:17-31
 ```

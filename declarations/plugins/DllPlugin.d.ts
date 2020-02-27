@@ -5,6 +5,7 @@
  */
 
 export interface DllPluginOptions {
+	asyncChunks: string[];
 	/**
 	 * Context of requests in the manifest file (defaults to the webpack context)
 	 */

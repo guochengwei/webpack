@@ -6,7 +6,7 @@
       "additionalProperties": {
         "description": "Module info",
         "type": "object",
-        "additionalProperties": false,
+        "additionalProperties": true,
         "properties": {
           "buildMeta": {
             "description": "Meta information about the module",
@@ -50,7 +50,7 @@
     "DllReferencePluginOptionsManifest": {
       "description": "An object containing content, name and type",
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "properties": {
         "content": {
           "description": "The mappings from request to module info",
@@ -72,6 +72,10 @@
               "$ref": "#/definitions/DllReferencePluginOptionsSourceType"
             }
           ]
+        },
+        "asyncChunk": {
+          "description": "If true, The chunk is the asyncChunk",
+          "type": "boolean"
         }
       },
       "required": ["content"]
@@ -99,7 +103,7 @@
   "anyOf": [
     {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "properties": {
         "context": {
           "description": "(absolute path) context of requests in the manifest (or content property)",
@@ -147,13 +151,17 @@
         "type": {
           "description": "The way how the export of the dll bundle is used",
           "enum": ["require", "object"]
+        },
+        "asyncChunkPath": {
+          "description": "The path of the asyncChunk",
+          "type": "string"
         }
       },
       "required": ["manifest"]
     },
     {
       "type": "object",
-      "additionalProperties": false,
+      "additionalProperties": true,
       "properties": {
         "content": {
           "description": "The mappings from request to module info",
@@ -197,6 +205,10 @@
         "type": {
           "description": "The way how the export of the dll bundle is used",
           "enum": ["require", "object"]
+        },
+        "asyncChunkPath": {
+          "description": "The path of the asyncChunk",
+          "type": "string"
         }
       },
       "required": ["content", "name"]

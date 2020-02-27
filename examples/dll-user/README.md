@@ -242,13 +242,13 @@ module.exports = (__webpack_require__(/*! dll-reference alpha_d61ee01b5c383d26e2
 
 ```
 Hash: 0a1b2c3d4e5f6a7b8c9d
-Version: webpack 4.39.0
+Version: webpack 4.39.2
     Asset      Size  Chunks             Chunk Names
-output.js  7.14 KiB       0  [emitted]  main
+output.js  7.15 KiB       0  [emitted]  main
 Entrypoint main = output.js
-chunk    {0} output.js (main) 541 bytes [entry] [rendered]
+chunk    {0} output.js (main) 549 bytes [entry] [rendered]
     > ./example.js main
- [0] ./example.js 205 bytes {0} [built]
+ [0] ./example.js 213 bytes {0} [built]
      single entry ./example.js  main
  [1] delegated ./alpha.js from dll-reference alpha_d61ee01b5c383d26e2c0 42 bytes {0} [built]
      cjs require ../dll/alpha [0] ./example.js 1:12-35
@@ -276,11 +276,11 @@ chunk    {0} output.js (main) 541 bytes [entry] [rendered]
 
 ```
 Hash: 0a1b2c3d4e5f6a7b8c9d
-Version: webpack 4.39.0
+Version: webpack 4.39.2
     Asset      Size  Chunks             Chunk Names
 output.js  1.33 KiB       0  [emitted]  main
 Entrypoint main = output.js
-chunk    {0} output.js (main) 541 bytes [entry] [rendered]
+chunk    {0} output.js (main) 549 bytes [entry] [rendered]
     > ./example.js main
  [0] external "alpha_d61ee01b5c383d26e2c0" 42 bytes {0} [built]
      delegated source dll-reference alpha_d61ee01b5c383d26e2c0 [3] delegated ./alpha.js from dll-reference alpha_d61ee01b5c383d26e2c0
@@ -290,7 +290,7 @@ chunk    {0} output.js (main) 541 bytes [entry] [rendered]
      delegated source dll-reference beta_d61ee01b5c383d26e2c0 [5] delegated ./beta.js from dll-reference beta_d61ee01b5c383d26e2c0
      delegated source dll-reference beta_d61ee01b5c383d26e2c0 [6] delegated ./b.js from dll-reference beta_d61ee01b5c383d26e2c0
      delegated source dll-reference beta_d61ee01b5c383d26e2c0 [7] delegated ./c.jsx from dll-reference beta_d61ee01b5c383d26e2c0
- [2] ./example.js 205 bytes {0} [built]
+ [2] ./example.js 213 bytes {0} [built]
      single entry ./example.js  main
  [3] delegated ./alpha.js from dll-reference alpha_d61ee01b5c383d26e2c0 42 bytes {0} [built]
      cjs require ../dll/alpha [2] ./example.js 1:12-35
